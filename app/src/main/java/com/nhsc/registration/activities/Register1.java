@@ -1,5 +1,7 @@
 package com.nhsc.registration.activities;
 
+import android.app.DatePickerDialog;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,11 +9,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nhsc.R;
 import com.nhsc.Utils.Utils;
+import com.nhsc.registration.fragment.DatePickerFragment;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 import static com.nhsc.Utils.AppConstants.registrationValues;
 
@@ -28,10 +37,14 @@ public class Register1 extends AppCompatActivity implements View.OnClickListener
 
     String first_name, last_name, cpr_num, mobile_num, dob;
     TextView sign_up_text;
-
+    DatePickerDialog.OnDateSetListener date;
     Utils utils;
+    LinearLayout lineraDob;
+    Calendar myCalendar = Calendar.getInstance();
+    private int mYear, mMonth, mDay, mHour, mMinute;
+    static final int DATE_PICKER_ID = 1111;
 
-
+    DatePickerDialog datePickerDialog;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +65,7 @@ public class Register1 extends AppCompatActivity implements View.OnClickListener
         utils = new Utils(Register1.this);
 
         next = (Button) findViewById(R.id.register1_next);
-
+        lineraDob=(LinearLayout)findViewById(R.id.ll_dob);
 
         first_name_edit = (EditText) findViewById(R.id.sign_up_firstname);
         last_name_edit = (EditText) findViewById(R.id.sign_up_lastname);
@@ -62,6 +75,13 @@ public class Register1 extends AppCompatActivity implements View.OnClickListener
 
         sign_up_text = (TextView) findViewById(R.id.sign_up_text);
 
+        lineraDob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(getFragmentManager(),"Date Picker");}
+
+        });
 
         utils.setUbuntu_Regular(sign_up_text);
 
@@ -73,13 +93,15 @@ public class Register1 extends AppCompatActivity implements View.OnClickListener
         utils.setUbuntu_Light(mobile_num_edit);
         utils.setUbuntu_Light(dob_edit);
 
-
     }
+    private void updateLabel() {
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
+        dob_edit.setText(sdf.format(myCalendar.getTime()));
+    }
     public void onclickmethods() {
-
         next.setOnClickListener(this);
-
     }
 
     @Override

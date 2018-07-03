@@ -44,6 +44,7 @@ import com.nhsc.home.views.HomeView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Home_Screen extends BaseActivity
@@ -86,7 +87,7 @@ public class Home_Screen extends BaseActivity
     };
     private HomeModel homeModel;
     private HomePresenter mPresenter;
-    private HashMap<String, ArrayList<String>> mDrawerData;
+    private LinkedHashMap<String, ArrayList<String>> mDrawerData;
 
     public static void setTabColor(TabHost tabhost) {
 
@@ -118,7 +119,7 @@ public class Home_Screen extends BaseActivity
         progressBar = (ProgressBar) findViewById(R.id.progress_view);
 
         setSupportActionBar(toolbar);
-        mDrawerData = new HashMap<>();
+        mDrawerData = new LinkedHashMap<>();
         mPresenter = new HomePresenterImpl(this, this, getSPRestClientInstance());
         mPresenter.getHomeData();
 
@@ -319,8 +320,13 @@ public class Home_Screen extends BaseActivity
                 }
             }
             mDrawerData.put(homeModel.getComponents().get(i).getCategoriesName(), list);
+
         }
-                       setUpRecyclerView(mDrawerData);
+        mDrawerData.put("Settings", new ArrayList<String>());
+        mDrawerData.put("Sign out",  new ArrayList<String>());
+
+
+        setUpRecyclerView(mDrawerData);
 
     }
 

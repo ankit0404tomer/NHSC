@@ -18,7 +18,7 @@
         android:layout_gravity="bottom|center_vertical|center_horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_vertical|center_horizontal"
             android:layout_marginBottom="10dp"
@@ -28,16 +28,16 @@
 
         <TextView
             android:id="@+id/grid_item_text"
-            android:layout_width="match_parent"
+            android:layout_width="115dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:lines="2"
             android:ellipsize="end"
-            android:padding="5dp"
             android:gravity="center"
+            android:lines="2"
+            android:text="ssssssssssssseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeess"
             android:textColor="#FFFFFF"
             android:textSize="14dp" />
 
