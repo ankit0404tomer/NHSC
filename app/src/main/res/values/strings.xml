@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">NHSC</string>
+    <string name="internet_connection_message">No internet connectivity</string>
+
+
+    // getstarted Strings
+
+    <string name="welcome_to_nhsc">Welcome to NHSC</string>
+    <string name="text1">Each online store has its own products,but if you want to go shopping in multiple places at once, so you only have one bag.</string>
+    <string name="getstarted">Get Started</string>
+
+    //sign in page strings
+
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="visit_app">Visit App</string>
+
+
+    //sign up page
+
+    <string name="sign_up">Sign up</string>
+    <string name="next">Next</string>
+    <string name="news_letter">News Letter</string>
+
+    <string name="terms"> I agree <u> Terms &amp; Conditions </u></string>
+    <string name="title_activity_home__screen">NHSC</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    //myaccount page
+
+    <string name="profile">Profile</string>
+    <string name="yourorders">Your Orders</string>
+    <string name="wishlist">Wish list</string>
+    <string name="support">Support</string>
+    <string name="rateapp">Rate the App</string>
+    <string name="signout">Sign Out</string>
+
+    //search page
+
+    <string name="search_hint">Search for Products</string>
+
+    //forgotPassword
+
+    <string name="forgot_mail_edit">Enter valid Email</string>
+    <string name="getpassword">Get Password</string>
+
+
+
+</resources>

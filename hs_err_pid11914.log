@@ -1,0 +1,1085 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f9360490c34, pid=11914, tid=0x00007f934821c700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_152-b01) (build 1.8.0_152-release-1024-b01)
+# Java VM: OpenJDK 64-Bit Server VM (25.152-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x466c34]  Compile::remove_speculative_types(PhaseIterGVN&)+0x1e4
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f93580bc800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=11926, stack(0x00007f934811c000,0x00007f934821d000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000002
+
+Registers:
+RAX=0x00007f9314f2aa70, RBX=0x00000000000000c8, RCX=0x00007f92ec5d6610, RDX=0x0000000002107fcb
+RSP=0x00007f9348218280, RBP=0x00007f9348218340, RSI=0x0000000002107fcb, RDI=0x00007f9314009b60
+R8 =0x00007f9314636850, R9 =0x0000000000000000, R10=0x00007f931811b050, R11=0x0000000000000d65
+R12=0x00007f9314f2a9d8, R13=0x0000000000000a8b, R14=0x00000000000000e0, R15=0x0000000000000002
+RIP=0x00007f9360490c34, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f9348218280)
+0x00007f9348218280:   00007f93185286b8 00007f9348219890
+0x00007f9348218290:   00007f9348219870 00007f93482197f8
+0x00007f93482182a0:   00007f93482182c0 00007f9348218e70
+0x00007f93482182b0:   00007f93482182e0 0000100000000003
+0x00007f93482182c0:   00007f93580bd0d0 00007f9300002000
+0x00007f93482182d0:   00007f9314636850 000000000000103c
+0x00007f93482182e0:   00007f9360ec3dd0 00007f93580bd0d0
+0x00007f93482182f0:   00007f9300000200 00007f92ec5d6610
+0x00007f9348218300:   00007f9300000000 00007f936087a9ff
+0x00007f9348218310:   00000000000010bd 00007f934821afc0
+0x00007f9348218320:   00007f9348218e70 00007f934821a450
+0x00007f9348218330:   00007f93482183b0 00007f934821afc8
+0x00007f9348218340:   00007f934821a340 00007f93604915de
+0x00007f9348218350:   0000000000000000 0000000cffffffff
+0x00007f9348218360:   000000000000002b 00007f9348218670
+0x00007f9348218370:   00007f934821afc8 000000000000000c
+0x00007f9348218380:   00007f93580bd0d0 00007f92ec5d2c90
+0x00007f9348218390:   00007f92ec5d6060 00007f92ec5dac78
+0x00007f93482183a0:   0000000000040298 ffffffffffffffff
+0x00007f93482183b0:   0000000cffff0000 0000000000000000
+0x00007f93482183c0:   0000000000000000 00007f9348218700
+0x00007f93482183d0:   00007f9348218838 00007f934821afc0
+0x00007f93482183e0:   0000000000000000 00007f9360a6082a
+0x00007f93482183f0:   0000000cffffff01 00007f9360ec0430
+0x00007f9348218400:   0000000000000000 00007f9348218790
+0x00007f9348218410:   00007f9348218838 00007f93482187e8
+0x00007f9348218420:   00007f9348218670 0000000000000010
+0x00007f9348218430:   00007f9348218720 00007f936023fee8
+0x00007f9348218440:   0000000000000004 ffffffffffffffff
+0x00007f9348218450:   0000000cffffffff 00007f9360ec0430
+0x00007f9348218460:   0000000000000000 00007f9348218790
+0x00007f9348218470:   00007f9348218838 00007f93482187e8 
+
+Instructions: (pc=0x00007f9360490c34)
+0x00007f9360490c14:   4c 8d 34 c5 08 00 00 00 0f 1f 40 00 49 8b 44 24
+0x00007f9360490c24:   08 4c 8b 3c 18 4d 85 ff 74 42 41 f6 c7 01 75 3c
+0x00007f9360490c34:   49 83 3f fe 74 36 41 8b 77 28 89 f2 c1 ea 05 3b
+0x00007f9360490c44:   55 b0 73 70 89 f1 b8 01 00 00 00 83 e1 1f 48 d3 
+
+Register to memory mapping:
+
+RAX=0x00007f9314f2aa70 is an unknown value
+RBX=0x00000000000000c8 is an unknown value
+RCX=0x00007f92ec5d6610 is an unknown value
+RDX=0x0000000002107fcb is an unknown value
+RSP=0x00007f9348218280 is pointing into the stack for thread: 0x00007f93580bc800
+RBP=0x00007f9348218340 is pointing into the stack for thread: 0x00007f93580bc800
+RSI=0x0000000002107fcb is an unknown value
+RDI=0x00007f9314009b60 is an unknown value
+R8 =0x00007f9314636850 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x00007f931811b050 is an unknown value
+R11=0x0000000000000d65 is an unknown value
+R12=0x00007f9314f2a9d8 is an unknown value
+R13=0x0000000000000a8b is an unknown value
+R14=0x00000000000000e0 is an unknown value
+R15=0x0000000000000002 is an unknown value
+
+
+Stack: [0x00007f934811c000,0x00007f934821d000],  sp=0x00007f9348218280,  free space=1008k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x466c34]  Compile::remove_speculative_types(PhaseIterGVN&)+0x1e4
+V  [libjvm.so+0x4675de]  Compile::Optimize()+0x79e
+V  [libjvm.so+0x469f1d]  Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)+0x109d
+V  [libjvm.so+0x3c6458]  C2Compiler::compile_method(ciEnv*, ciMethod*, int)+0x1c8
+V  [libjvm.so+0x472652]  CompileBroker::invoke_compiler_on_method(CompileTask*)+0x8c2
+V  [libjvm.so+0x4734d8]  CompileBroker::compiler_thread_loop()+0x4e8
+V  [libjvm.so+0x998d78]  JavaThread::thread_main_inner()+0xd8
+V  [libjvm.so+0x850032]  java_start(Thread*)+0xf2
+C  [libpthread.so.0+0x76ba]  start_thread+0xca
+
+
+Current CompileTask:
+C2:   3508 4526       4       org.objectweb.asm.Frame::execute (2252 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f92ed85b000 JavaThread "Memory manager" [_thread_blocked, id=11951, stack(0x00007f9331758000,0x00007f9331859000)]
+  0x00007f92ed7b4800 JavaThread "pool-1-thread-1" [_thread_blocked, id=11950, stack(0x00007f9331a59000,0x00007f9331b5a000)]
+  0x00007f92ed302000 JavaThread "build operations Thread 4" [_thread_blocked, id=11949, stack(0x00007f93323c3000,0x00007f93324c4000)]
+  0x00007f92ed300000 JavaThread "build operations Thread 3" [_thread_blocked, id=11948, stack(0x00007f93324c4000,0x00007f93325c5000)]
+  0x00007f92ed2fe800 JavaThread "build operations Thread 2" [_thread_blocked, id=11947, stack(0x00007f93325c5000,0x00007f93326c6000)]
+  0x00007f92ed2fb800 JavaThread "build operations" [_thread_blocked, id=11946, stack(0x00007f93326c6000,0x00007f93327c7000)]
+  0x00007f92ed201800 JavaThread "Cache worker for Artifact transforms cache (/data/EMBITEL/emb-ankitom/.gradle/caches/transforms-1)" [_thread_blocked, id=11945, stack(0x00007f93329c7000,0x00007f9332ac8000)]
+  0x00007f92ec24e800 JavaThread "Cache worker for file hash cache (/data/EMBITEL/emb-ankitom/Desktop/NHSC/.gradle/4.4/fileHashes)" [_thread_blocked, id=11944, stack(0x00007f93336fb000,0x00007f93337fc000)]
+  0x00007f92ec19e800 JavaThread "File lock request listener" [_thread_in_native, id=11942, stack(0x00007f93339fc000,0x00007f9333afd000)]
+  0x00007f92ec128800 JavaThread "Cache worker for file hash cache (/data/EMBITEL/emb-ankitom/.gradle/caches/4.4/fileHashes)" [_thread_blocked, id=11941, stack(0x00007f9333afd000,0x00007f9333bfe000)]
+  0x00007f92ec00f800 JavaThread "Stdin handler" [_thread_blocked, id=11939, stack(0x00007f9333bfe000,0x00007f9333cff000)]
+  0x00007f92ec005000 JavaThread "Asynchronous log dispatcher for DefaultDaemonConnection: socket connection from /127.0.0.1:35467 to /127.0.0.1:33104" [_thread_blocked, id=11938, stack(0x00007f9333eff000,0x00007f9334000000)]
+  0x00007f930000c000 JavaThread "Daemon worker" [_thread_in_Java, id=11936, stack(0x00007f93380e2000,0x00007f93381e3000)]
+  0x00007f930000b000 JavaThread "Cancel handler" [_thread_blocked, id=11935, stack(0x00007f93381e3000,0x00007f93382e4000)]
+  0x00007f9300007800 JavaThread "Handler for socket connection from /127.0.0.1:35467 to /127.0.0.1:33104" [_thread_in_native, id=11934, stack(0x00007f93382e4000,0x00007f93383e5000)]
+  0x00007f930801b800 JavaThread "Daemon" [_thread_blocked, id=11933, stack(0x00007f93383e5000,0x00007f93384e6000)]
+  0x00007f9358e60000 JavaThread "Daemon periodic checks" [_thread_blocked, id=11932, stack(0x00007f93384e6000,0x00007f93385e7000)]
+  0x00007f9358e39000 JavaThread "Incoming local TCP Connector on port 35467" [_thread_in_native, id=11931, stack(0x00007f93385ee000,0x00007f93386ef000)]
+  0x00007f93580de800 JavaThread "Service Thread" daemon [_thread_blocked, id=11929, stack(0x00007f9340dfe000,0x00007f9340eff000)]
+  0x00007f93580c1000 JavaThread "C1 CompilerThread2" daemon [_thread_in_vm, id=11928, stack(0x00007f9340eff000,0x00007f9341000000)]
+  0x00007f93580bf800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=11927, stack(0x00007f934801b000,0x00007f934811c000)]
+=>0x00007f93580bc800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=11926, stack(0x00007f934811c000,0x00007f934821d000)]
+  0x00007f93580bb000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=11925, stack(0x00007f934821d000,0x00007f934831e000)]
+  0x00007f9358088800 JavaThread "Finalizer" daemon [_thread_blocked, id=11924, stack(0x00007f93485f6000,0x00007f93486f7000)]
+  0x00007f9358084000 JavaThread "Reference Handler" daemon [_thread_blocked, id=11923, stack(0x00007f93486f7000,0x00007f93487f8000)]
+  0x00007f935800e800 JavaThread "main" [_thread_blocked, id=11915, stack(0x00007f9361a31000,0x00007f9361b32000)]
+
+Other Threads:
+  0x00007f935807c000 VMThread [stack: 0x00007f93487f8000,0x00007f93488f9000] [id=11922]
+  0x00007f93580e1000 WatcherThread [stack: 0x00007f9340cfd000,0x00007f9340dfe000] [id=11930]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 268288K, used 193001K [0x00000000e0000000, 0x00000000f1c80000, 0x0000000100000000)
+  eden space 258048K, 74% used [0x00000000e0000000,0x00000000ebc7a678,0x00000000efc00000)
+  from space 10240K, 0% used [0x00000000efc00000,0x00000000efc00000,0x00000000f0600000)
+  to   space 12800K, 0% used [0x00000000f1000000,0x00000000f1000000,0x00000000f1c80000)
+ ParOldGen       total 174592K, used 16682K [0x00000000a0000000, 0x00000000aaa80000, 0x00000000e0000000)
+  object space 174592K, 9% used [0x00000000a0000000,0x00000000a104a968,0x00000000aaa80000)
+ Metaspace       used 46739K, capacity 47794K, committed 47960K, reserved 1091584K
+  class space    used 6370K, capacity 6682K, committed 6784K, reserved 1048576K
+
+Card table byte_map: [0x00007f935dc57000,0x00007f935df58000] byte_map_base: 0x00007f935d757000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f9360f04440
+ Begin Bits: [0x00007f9341000000, 0x00007f9342800000)
+ End Bits:   [0x00007f9342800000, 0x00007f9344000000)
+
+Polling page: 0x00007f9361b58000
+
+CodeCache: size=245760Kb used=15052Kb max_used=15056Kb free=230707Kb
+ bounds [0x00007f9349000000, 0x00007f9349ec0000, 0x00007f9358000000]
+ total_blobs=5252 nmethods=4521 adapters=644
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 3.494 Thread 0x00007f93580c1000 4523       3       java.lang.invoke.DirectMethodHandle::preparedLambdaForm (31 bytes)
+Event: 3.494 Thread 0x00007f93580c1000 nmethod 4523 0x00007f9349ead490 code [0x00007f9349ead620, 0x00007f9349eadaa8]
+Event: 3.494 Thread 0x00007f93580c1000 4522       3       com.google.common.cache.LocalCache$Segment::getFirst (21 bytes)
+Event: 3.494 Thread 0x00007f93580c1000 nmethod 4522 0x00007f9349eacc50 code [0x00007f9349eacde0, 0x00007f9349ead2c8]
+Event: 3.495 Thread 0x00007f93580bc800 4526       4       org.objectweb.asm.Frame::execute (2252 bytes)
+Event: 3.502 Thread 0x00007f93580bf800 nmethod 4517 0x00007f9349eb88d0 code [0x00007f9349eb8ac0, 0x00007f9349eb9458]
+Event: 3.502 Thread 0x00007f93580bf800 4525       4       jdk.internal.org.objectweb.asm.Type::getArgumentsAndReturnSizes (151 bytes)
+Event: 3.505 Thread 0x00007f93580bf800 nmethod 4525 0x00007f9349ebb710 code [0x00007f9349ebb8a0, 0x00007f9349ebbd18]
+Event: 3.506 Thread 0x00007f93580bf800 4542       4       java.lang.reflect.Modifier::isPublic (12 bytes)
+Event: 3.506 Thread 0x00007f93580bf800 nmethod 4542 0x00007f93494f3c90 code [0x00007f93494f3dc0, 0x00007f93494f3df8]
+
+GC Heap History (10 events):
+Event: 1.213 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 139264K, used 30379K [0x00000000e0000000, 0x00000000e9200000, 0x0000000100000000)
+  eden space 129024K, 15% used [0x00000000e0000000,0x00000000e13b1fd8,0x00000000e7e00000)
+  from space 10240K, 99% used [0x00000000e8800000,0x00000000e91f8df0,0x00000000e9200000)
+  to   space 10240K, 0% used [0x00000000e7e00000,0x00000000e7e00000,0x00000000e8800000)
+ ParOldGen       total 171008K, used 284K [0x00000000a0000000, 0x00000000aa700000, 0x00000000e0000000)
+  object space 171008K, 0% used [0x00000000a0000000,0x00000000a0047238,0x00000000aa700000)
+ Metaspace       used 20703K, capacity 21054K, committed 21248K, reserved 1067008K
+  class space    used 2899K, capacity 3037K, committed 3072K, reserved 1048576K
+Event: 1.221 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 139264K, used 8611K [0x00000000e0000000, 0x00000000f1000000, 0x0000000100000000)
+  eden space 129024K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000e7e00000)
+  from space 10240K, 84% used [0x00000000e7e00000,0x00000000e8668f48,0x00000000e8800000)
+  to   space 10240K, 0% used [0x00000000f0600000,0x00000000f0600000,0x00000000f1000000)
+ ParOldGen       total 171008K, used 292K [0x00000000a0000000, 0x00000000aa700000, 0x00000000e0000000)
+  object space 171008K, 0% used [0x00000000a0000000,0x00000000a0049238,0x00000000aa700000)
+ Metaspace       used 20703K, capacity 21054K, committed 21248K, reserved 1067008K
+  class space    used 2899K, capacity 3037K, committed 3072K, reserved 1048576K
+}
+Event: 1.221 GC heap before
+{Heap before GC invocations=4 (full 1):
+ PSYoungGen      total 139264K, used 8611K [0x00000000e0000000, 0x00000000f1000000, 0x0000000100000000)
+  eden space 129024K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000e7e00000)
+  from space 10240K, 84% used [0x00000000e7e00000,0x00000000e8668f48,0x00000000e8800000)
+  to   space 10240K, 0% used [0x00000000f0600000,0x00000000f0600000,0x00000000f1000000)
+ ParOldGen       total 171008K, used 292K [0x00000000a0000000, 0x00000000aa700000, 0x00000000e0000000)
+  object space 171008K, 0% used [0x00000000a0000000,0x00000000a0049238,0x00000000aa700000)
+ Metaspace       used 20703K, capacity 21054K, committed 21248K, reserved 1067008K
+  class space    used 2899K, capacity 3037K, committed 3072K, reserved 1048576K
+Event: 1.260 GC heap after
+Heap after GC invocations=4 (full 1):
+ PSYoungGen      total 139264K, used 0K [0x00000000e0000000, 0x00000000f1000000, 0x0000000100000000)
+  eden space 129024K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000e7e00000)
+  from space 10240K, 0% used [0x00000000e7e00000,0x00000000e7e00000,0x00000000e8800000)
+  to   space 10240K, 0% used [0x00000000f0600000,0x00000000f0600000,0x00000000f1000000)
+ ParOldGen       total 109056K, used 8442K [0x00000000a0000000, 0x00000000a6a80000, 0x00000000e0000000)
+  object space 109056K, 7% used [0x00000000a0000000,0x00000000a083ea50,0x00000000a6a80000)
+ Metaspace       used 20703K, capacity 21054K, committed 21248K, reserved 1067008K
+  class space    used 2899K, capacity 3037K, committed 3072K, reserved 1048576K
+}
+Event: 2.127 GC heap before
+{Heap before GC invocations=5 (full 1):
+ PSYoungGen      total 139264K, used 129024K [0x00000000e0000000, 0x00000000f1000000, 0x0000000100000000)
+  eden space 129024K, 100% used [0x00000000e0000000,0x00000000e7e00000,0x00000000e7e00000)
+  from space 10240K, 0% used [0x00000000e7e00000,0x00000000e7e00000,0x00000000e8800000)
+  to   space 10240K, 0% used [0x00000000f0600000,0x00000000f0600000,0x00000000f1000000)
+ ParOldGen       total 109056K, used 8442K [0x00000000a0000000, 0x00000000a6a80000, 0x00000000e0000000)
+  object space 109056K, 7% used [0x00000000a0000000,0x00000000a083ea50,0x00000000a6a80000)
+ Metaspace       used 29338K, capacity 29868K, committed 30208K, reserved 1075200K
+  class space    used 4130K, capacity 4321K, committed 4352K, reserved 1048576K
+Event: 2.141 GC heap after
+Heap after GC invocations=5 (full 1):
+ PSYoungGen      total 194560K, used 10211K [0x00000000e0000000, 0x00000000f1000000, 0x0000000100000000)
+  eden space 184320K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000eb400000)
+  from space 10240K, 99% used [0x00000000f0600000,0x00000000f0ff8e50,0x00000000f1000000)
+  to   space 10240K, 0% used [0x00000000efc00000,0x00000000efc00000,0x00000000f0600000)
+ ParOldGen       total 109056K, used 10704K [0x00000000a0000000, 0x00000000a6a80000, 0x00000000e0000000)
+  object space 109056K, 9% used [0x00000000a0000000,0x00000000a0a74378,0x00000000a6a80000)
+ Metaspace       used 29338K, capacity 29868K, committed 30208K, reserved 1075200K
+  class space    used 4130K, capacity 4321K, committed 4352K, reserved 1048576K
+}
+Event: 2.400 GC heap before
+{Heap before GC invocations=6 (full 1):
+ PSYoungGen      total 194560K, used 43259K [0x00000000e0000000, 0x00000000f1000000, 0x0000000100000000)
+  eden space 184320K, 17% used [0x00000000e0000000,0x00000000e2045ee0,0x00000000eb400000)
+  from space 10240K, 99% used [0x00000000f0600000,0x00000000f0ff8e50,0x00000000f1000000)
+  to   space 10240K, 0% used [0x00000000efc00000,0x00000000efc00000,0x00000000f0600000)
+ ParOldGen       total 109056K, used 10704K [0x00000000a0000000, 0x00000000a6a80000, 0x00000000e0000000)
+  object space 109056K, 9% used [0x00000000a0000000,0x00000000a0a74378,0x00000000a6a80000)
+ Metaspace       used 34690K, capacity 35262K, committed 35416K, reserved 1079296K
+  class space    used 4792K, capacity 4975K, committed 4992K, reserved 1048576K
+Event: 2.408 GC heap after
+Heap after GC invocations=6 (full 1):
+ PSYoungGen      total 268288K, used 10095K [0x00000000e0000000, 0x00000000f1c80000, 0x0000000100000000)
+  eden space 258048K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000efc00000)
+  from space 10240K, 98% used [0x00000000efc00000,0x00000000f05dbde8,0x00000000f0600000)
+  to   space 12800K, 0% used [0x00000000f1000000,0x00000000f1000000,0x00000000f1c80000)
+ ParOldGen       total 109056K, used 10712K [0x00000000a0000000, 0x00000000a6a80000, 0x00000000e0000000)
+  object space 109056K, 9% used [0x00000000a0000000,0x00000000a0a76378,0x00000000a6a80000)
+ Metaspace       used 34690K, capacity 35262K, committed 35416K, reserved 1079296K
+  class space    used 4792K, capacity 4975K, committed 4992K, reserved 1048576K
+}
+Event: 2.408 GC heap before
+{Heap before GC invocations=7 (full 2):
+ PSYoungGen      total 268288K, used 10095K [0x00000000e0000000, 0x00000000f1c80000, 0x0000000100000000)
+  eden space 258048K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000efc00000)
+  from space 10240K, 98% used [0x00000000efc00000,0x00000000f05dbde8,0x00000000f0600000)
+  to   space 12800K, 0% used [0x00000000f1000000,0x00000000f1000000,0x00000000f1c80000)
+ ParOldGen       total 109056K, used 10712K [0x00000000a0000000, 0x00000000a6a80000, 0x00000000e0000000)
+  object space 109056K, 9% used [0x00000000a0000000,0x00000000a0a76378,0x00000000a6a80000)
+ Metaspace       used 34690K, capacity 35262K, committed 35416K, reserved 1079296K
+  class space    used 4792K, capacity 4975K, committed 4992K, reserved 1048576K
+Event: 2.444 GC heap after
+Heap after GC invocations=7 (full 2):
+ PSYoungGen      total 268288K, used 0K [0x00000000e0000000, 0x00000000f1c80000, 0x0000000100000000)
+  eden space 258048K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000efc00000)
+  from space 10240K, 0% used [0x00000000efc00000,0x00000000efc00000,0x00000000f0600000)
+  to   space 12800K, 0% used [0x00000000f1000000,0x00000000f1000000,0x00000000f1c80000)
+ ParOldGen       total 174592K, used 16682K [0x00000000a0000000, 0x00000000aaa80000, 0x00000000e0000000)
+  object space 174592K, 9% used [0x00000000a0000000,0x00000000a104a968,0x00000000aaa80000)
+ Metaspace       used 34690K, capacity 35262K, committed 35416K, reserved 1079296K
+  class space    used 4792K, capacity 4975K, committed 4992K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 2.690 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f934941581c method=java.lang.StringCoding.decode(Ljava/lang/String;[BII)[C @ 51
+Event: 2.694 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f93493c2060 method=java.lang.CharacterDataLatin1.isWhitespace(I)Z @ 14
+Event: 2.715 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f934963d150 method=java.security.CodeSource.getCertificates()[Ljava/security/cert/Certificate; @ 22
+Event: 2.715 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9349a2b944 method=java.security.CodeSource.matchCerts(Ljava/security/CodeSource;Z)Z @ 11
+Event: 2.726 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9349a080e8 method=java.util.LinkedHashMap.get(Ljava/lang/Object;)Ljava/lang/Object; @ 20
+Event: 2.819 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9349b4e4e8 method=java.lang.ThreadLocal$ThreadLocalMap.set(Ljava/lang/ThreadLocal;Ljava/lang/Object;)V @ 119
+Event: 3.218 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9349cc93d0 method=java.io.DataInputStream.readUTF(Ljava/io/DataInput;)Ljava/lang/String; @ 31
+Event: 3.273 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f934964e284 method=java.util.WeakHashMap.remove(Ljava/lang/Object;)Ljava/lang/Object; @ 94
+Event: 3.280 Thread 0x00007f930000c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f9349941abc method=java.util.regex.Pattern$BmpCharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 34
+Event: 3.486 Thread 0x00007f930000c000 Uncommon trap: reason=range_check action=make_not_entrant pc=0x00007f9349c085d8 method=java.lang.String.charAt(I)C @ 27
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 3.456 Thread 0x00007f930000c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000eb26bcf0) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3.456 Thread 0x00007f930000c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000eb272fe0) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3.456 Thread 0x00007f930000c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000eb274560) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3.457 Thread 0x00007f930000c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000eb279ff0) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3.457 Thread 0x00007f930000c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000eb27b560) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3.457 Thread 0x00007f930000c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000eb27f328) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3.457 Thread 0x00007f930000c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000eb280898) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3.462 Thread 0x00007f930000c000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparing$77a9974f$1(Ljava/util/function/Function;Ljava/lang/Object;Ljava/lang/Object;)I> (0x00000000eb312cd0) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hots
+Event: 3.463 Thread 0x00007f930000c000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$thenComparing$36697e65$1(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)I> (0x00000000eb31fcc0) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot
+Event: 3.473 Thread 0x00007f930000c000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$maxBy$1(Ljava/util/Comparator;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000eb4646a0) thrown at [/usr/local/google/home/ralucas/source/AOSP-openjdk-git/jdk8u/hotspot
+
+Events (10 events):
+Event: 3.504 loading class com/android/build/gradle/internal/dsl/CoreBuildType
+Event: 3.504 loading class com/android/build/gradle/internal/dsl/CoreBuildType done
+Event: 3.504 loading class com/android/build/gradle/internal/BuildTypeData
+Event: 3.504 loading class com/android/build/gradle/internal/BuildTypeData done
+Event: 3.505 loading class com/android/build/gradle/internal/dsl/CoreProductFlavor
+Event: 3.505 loading class com/android/build/gradle/internal/dsl/CoreProductFlavor done
+Event: 3.505 loading class com/android/build/gradle/internal/ProductFlavorData
+Event: 3.505 loading class com/android/build/gradle/internal/ProductFlavorData done
+Event: 3.506 loading class com/android/build/gradle/internal/core/VariantConfiguration
+Event: 3.506 loading class com/android/build/gradle/internal/core/VariantConfiguration done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:04 5777368                            /data/EMBITEL/emb-ankitom/android-studio/jre/bin/java
+00600000-00601000 r--p 00000000 08:04 5777368                            /data/EMBITEL/emb-ankitom/android-studio/jre/bin/java
+00601000-00602000 rw-p 00001000 08:04 5777368                            /data/EMBITEL/emb-ankitom/android-studio/jre/bin/java
+01ca6000-01cc7000 rw-p 00000000 00:00 0                                  [heap]
+a0000000-aaa80000 rw-p 00000000 00:00 0 
+aaa80000-e0000000 ---p 00000000 00:00 0 
+e0000000-f1c80000 rw-p 00000000 00:00 0 
+f1c80000-100000000 ---p 00000000 00:00 0 
+100000000-1006a0000 rw-p 00000000 00:00 0 
+1006a0000-140000000 ---p 00000000 00:00 0 
+7f92c4000000-7f92c4021000 rw-p 00000000 00:00 0 
+7f92c4021000-7f92c8000000 ---p 00000000 00:00 0 
+7f92c8000000-7f92c8021000 rw-p 00000000 00:00 0 
+7f92c8021000-7f92cc000000 ---p 00000000 00:00 0 
+7f92cc000000-7f92cc021000 rw-p 00000000 00:00 0 
+7f92cc021000-7f92d0000000 ---p 00000000 00:00 0 
+7f92d0000000-7f92d0021000 rw-p 00000000 00:00 0 
+7f92d0021000-7f92d4000000 ---p 00000000 00:00 0 
+7f92d4000000-7f92d4021000 rw-p 00000000 00:00 0 
+7f92d4021000-7f92d8000000 ---p 00000000 00:00 0 
+7f92d8000000-7f92d8021000 rw-p 00000000 00:00 0 
+7f92d8021000-7f92dc000000 ---p 00000000 00:00 0 
+7f92dc000000-7f92dc021000 rw-p 00000000 00:00 0 
+7f92dc021000-7f92e0000000 ---p 00000000 00:00 0 
+7f92e0000000-7f92e0021000 rw-p 00000000 00:00 0 
+7f92e0021000-7f92e4000000 ---p 00000000 00:00 0 
+7f92e4000000-7f92e4021000 rw-p 00000000 00:00 0 
+7f92e4021000-7f92e8000000 ---p 00000000 00:00 0 
+7f92e8000000-7f92e8073000 rw-p 00000000 00:00 0 
+7f92e8073000-7f92ec000000 ---p 00000000 00:00 0 
+7f92ec000000-7f92edcd9000 rw-p 00000000 00:00 0 
+7f92edcd9000-7f92f0000000 ---p 00000000 00:00 0 
+7f92f0000000-7f92f027f000 rw-p 00000000 00:00 0 
+7f92f027f000-7f92f4000000 ---p 00000000 00:00 0 
+7f92f4000000-7f92f4026000 rw-p 00000000 00:00 0 
+7f92f4026000-7f92f8000000 ---p 00000000 00:00 0 
+7f92f8000000-7f92f8021000 rw-p 00000000 00:00 0 
+7f92f8021000-7f92fc000000 ---p 00000000 00:00 0 
+7f92fc000000-7f92fc021000 rw-p 00000000 00:00 0 
+7f92fc021000-7f9300000000 ---p 00000000 00:00 0 
+7f9300000000-7f9300021000 rw-p 00000000 00:00 0 
+7f9300021000-7f9304000000 ---p 00000000 00:00 0 
+7f9304000000-7f9304021000 rw-p 00000000 00:00 0 
+7f9304021000-7f9308000000 ---p 00000000 00:00 0 
+7f9308000000-7f9308078000 rw-p 00000000 00:00 0 
+7f9308078000-7f930c000000 ---p 00000000 00:00 0 
+7f930c000000-7f930cb7f000 rw-p 00000000 00:00 0 
+7f930cb7f000-7f9310000000 ---p 00000000 00:00 0 
+7f9310000000-7f9310021000 rw-p 00000000 00:00 0 
+7f9310021000-7f9314000000 ---p 00000000 00:00 0 
+7f9314000000-7f9315c1b000 rw-p 00000000 00:00 0 
+7f9315c1b000-7f9318000000 ---p 00000000 00:00 0 
+7f9318000000-7f9319e4d000 rw-p 00000000 00:00 0 
+7f9319e4d000-7f931c000000 ---p 00000000 00:00 0 
+7f931c000000-7f931c021000 rw-p 00000000 00:00 0 
+7f931c021000-7f9320000000 ---p 00000000 00:00 0 
+7f9320000000-7f9320021000 rw-p 00000000 00:00 0 
+7f9320021000-7f9324000000 ---p 00000000 00:00 0 
+7f9324000000-7f9324021000 rw-p 00000000 00:00 0 
+7f9324021000-7f9328000000 ---p 00000000 00:00 0 
+7f9328000000-7f9328021000 rw-p 00000000 00:00 0 
+7f9328021000-7f932c000000 ---p 00000000 00:00 0 
+7f932c000000-7f932c021000 rw-p 00000000 00:00 0 
+7f932c021000-7f9330000000 ---p 00000000 00:00 0 
+7f9330d43000-7f9330d83000 rw-p 00000000 00:00 0 
+7f9330d83000-7f9330f43000 ---p 00000000 00:00 0 
+7f9330f43000-7f9331143000 rw-p 00000000 00:00 0 
+7f9331143000-7f9331155000 r--s 00345000 08:04 5777473                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/resources.jar
+7f9331155000-7f9331355000 rw-p 00000000 00:00 0 
+7f9331355000-7f9331555000 rw-p 00000000 00:00 0 
+7f9331555000-7f9331558000 r--s 00015000 08:04 5777479                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/jce.jar
+7f9331558000-7f9331758000 rw-p 00000000 00:00 0 
+7f9331758000-7f933175b000 ---p 00000000 00:00 0 
+7f933175b000-7f9331a59000 rw-p 00000000 00:00 0 
+7f9331a59000-7f9331a5c000 ---p 00000000 00:00 0 
+7f9331a5c000-7f9331d50000 rw-p 00000000 00:00 0 
+7f9331d50000-7f9331d5a000 ---p 00000000 00:00 0 
+7f9331d5a000-7f9331f5a000 rw-p 00000000 00:00 0 
+7f9331f5a000-7f9331f5b000 r--s 00005000 08:04 7733813                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/2.21/c969d8f15c467f0ef7d7b04889afbe7b5d48e22f/istack-commons-runtime-2.21.jar
+7f9331f5b000-7f9331f5d000 r--s 0000f000 08:04 7733819                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.2.11/2df047d8c187a62f2177bf6013f1f9786cdfc8a2/txw2-2.2.11.jar
+7f9331f5d000-7f9331f60000 r--s 00016000 08:04 7733811                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.12-b140109.1041/7ed0e0d01198614194d56dfb03d9d95aa311824c/jaxb-api-2.2.12-b140109.1041.jar
+7f9331f60000-7f9331f65000 r--s 00044000 08:04 7733809                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.sun.xml.fastinfoset/FastInfoset/1.2.13/98f56b9354e27bd2941cc5d461344e240ae51ae/FastInfoset-1.2.13.jar
+7f9331f65000-7f9331f67000 r--s 00007000 08:04 7733807                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.jvnet.staxex/stax-ex/1.7.7/18bed5a0da27a6b43efe01282f2dc911b1cb3a72/stax-ex-1.7.7.jar
+7f9331f67000-7f9331f6c000 r--s 00021000 08:04 7733815                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-core/2.2.11/f5745049f5fb9cb9d9b5f513c207727f475983e9/jaxb-core-2.2.11.jar
+7f9331f6c000-7f9331f72000 r--s 00033000 08:04 7733801                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/b7f0fc8f61ecadeb3695f0b9464755eee44374d4/commons-codec-1.6.jar
+7f9331f72000-7f9331f74000 r--s 0000d000 08:04 7733805                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar
+7f9331f74000-7f9331f7a000 r--s 00032000 08:04 7733797                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.2.5/472f0f5f8dba5d1962cb9d7739feed739a31c30d/httpcore-4.2.5.jar
+7f9331f7a000-7f9331f8b000 r--s 000eb000 08:04 7733803                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.2.11/65510afc78679e347b0d774617a97fedac94f8/jaxb-runtime-2.2.11.jar
+7f9331f8b000-7f9331f8e000 r--s 00011000 08:04 7733799                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.sun.activation/javax.activation/1.2.0/bf744c1e2776ed1de3c55c8dac1057ec331ef744/javax.activation-1.2.0.jar
+7f9331f8e000-7f9331f90000 r--s 00003000 08:04 7733795                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar
+7f9331f90000-7f9331f91000 r--s 0000a000 08:04 7733793                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/ccbc77a5fd907ef863c29f3596c6f54ffa4e9442/kxml2-2.3.0.jar
+7f9331f91000-7f9331f93000 r--s 00005000 08:04 7733791                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.1/9ba2dcdf94ce35c8a8e9bff242db0618ca932e92/httpmime-4.1.jar
+7f9331f93000-7f9331f9d000 r--s 00061000 08:04 7733789                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.2.6/e4ca30a6a3a075053a61c6fc850d2432dc012ba7/httpclient-4.2.6.jar
+7f9331f9d000-7f9331fa6000 r--s 00064000 08:04 7733787                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.12/84caa68576e345eb5e7ae61a0e5a9229eb100d7b/commons-compress-1.12.jar
+7f9331fa6000-7f9331fa7000 r--s 00000000 08:04 7733785                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar
+7f9331fa7000-7f9331fa9000 r--s 00001000 08:04 7733781                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar
+7f9331fa9000-7f9331fac000 r--s 00006000 08:04 7733779                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar
+7f9331fac000-7f9331fbc000 r--s 000d6000 08:04 7211005                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-base/5.3.3/988b6b0636ce343d4962b3b37f6319dcc6e99a61/proguard-base-5.3.3.jar
+7f9331fbc000-7f9331fcc000 r--s 000d4000 08:04 7733783                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.0/25eb440d6eeb9fc60299121020fe726eb2100d03/kotlin-stdlib-1.2.0.jar
+7f9331fcc000-7f9331fcd000 r--s 00000000 08:04 7733773                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.2.0/ec8b969e26fbcf2265a4d1a1539c4d1d4c5af380/kotlin-stdlib-jre7-1.2.0.jar
+7f9331fcd000-7f9331fce000 r--s 00001000 08:04 7603364                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools/annotations/26.1.2/4f4e0ee71b9ccaa4a70cc86e40fb84ada2ed99a3/annotations-26.1.2.jar
+7f9331fce000-7f9331fd3000 r--s 00034000 08:04 7733777                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar
+7f9331fd3000-7f9331fd5000 r--s 00015000 08:04 7733775                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.squareup/javapoet/1.8.0/e858dc62ef484048540d27d36f3ec2177a3fa9b1/javapoet-1.8.0.jar
+7f9331fd5000-7f9331fd8000 r--s 00033000 08:04 7733769                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.googlecode.juniversalchardet/juniversalchardet/1.0.3/cd49678784c46aa8789c060538e0154013bb421b/juniversalchardet-1.0.3.jar
+7f9331fd8000-7f9331fdc000 r--s 0002a000 08:04 7733767                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar
+7f9331fdc000-7f9331ff3000 r--s 00154000 08:04 7733763                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.5.3/f35db7e4b2446e4174ba6a73db7bd6b3e6bb5da1/antlr4-4.5.3.jar
+7f9331ff3000-7f9331ff4000 r--s 00003000 08:04 6034410                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.databinding/baseLibrary/3.1.2/1b6a1add6a577708b62737dc31c479549f77750d/baseLibrary-3.1.2.jar
+7f9331ff4000-7f9332028000 r--s 00239000 08:04 7733765                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.0/4bbda3b5425aa38a9f6960468a29c5ef3e8a28c9/kotlin-reflect-1.2.0.jar
+7f9332028000-7f9332029000 r--s 00003000 08:04 7733759                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.googlecode.json-simple/json-simple/1.1/5e303a03d04e6788dddfa3655272580ae0fc13bb/json-simple-1.1.jar
+7f9332029000-7f933214e000 r--s 00f5d000 08:04 7733817                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/7.2.0/5ad3a2bb04143f70aa0765fc29fc29571a7d6b34/fastutil-7.2.0.jar
+7f933214e000-7f9332199000 r--s 002ff000 08:04 7733761                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.56/a153c6f9744a3e9dd6feab5e210e1c9861362ec7/bcprov-jdk15on-1.56.jar
+7f9332199000-7f93321aa000 r--s 00097000 08:04 7733757                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.56/4648af70268b6fdb24674fb1fd7c1fcc73db1231/bcpkix-jdk15on-1.56.jar
+7f93321aa000-7f93321af000 r--s 0003f000 08:04 7603365                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/apksig/3.1.2/5af360dd30015a9a47c8ab0af0e6b05f64760edc/apksig-3.1.2.jar
+7f93321af000-7f93321b2000 r--s 00007000 08:04 7603362                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/3.1.2/4504b655fa8fe72302020ca9a2387f3f23fbfb57/builder-model-3.1.2.jar
+7f93321b2000-7f93321c1000 r--s 00143000 08:04 7471989                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.4.0/b32aba0cbe737a4ca953f71688725972e3ee927c/protobuf-java-3.4.0.jar
+7f93321c1000-7f93321f1000 r--s 00245000 08:04 7733745                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/22.0/3564ef3803de51fb0530a8377ec6100b33b0d073/guava-22.0.jar
+7f93321f1000-7f93323c3000 r--s 01888000 08:04 6034411                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/3.1.2/133b1f665104f0ebf01f71b61e4794385d7b5f1b/builder-3.1.2.jar
+7f93323c3000-7f93323c6000 ---p 00000000 00:00 0 
+7f93323c6000-7f93324c4000 rw-p 00000000 00:00 0 
+7f93324c4000-7f93324c7000 ---p 00000000 00:00 0 
+7f93324c7000-7f93325c5000 rw-p 00000000 00:00 0 
+7f93325c5000-7f93325c8000 ---p 00000000 00:00 0 
+7f93325c8000-7f93326c6000 rw-p 00000000 00:00 0 
+7f93326c6000-7f93326c9000 ---p 00000000 00:00 0 
+7f93326c9000-7f93329c7000 rw-p 00000000 00:00 0 
+7f93329c7000-7f93329ca000 ---p 00000000 00:00 0 
+7f93329ca000-7f9332cc8000 rw-p 00000000 00:00 0 
+7f9332cc8000-7f9332ec8000 rw-p 00000000 00:00 0 
+7f9332ec8000-7f93330c8000 rw-p 00000000 00:00 0 
+7f93330c8000-7f93332c8000 rw-p 00000000 00:00 0 
+7f93332c8000-7f93334c8000 rw-p 00000000 00:00 0 
+7f93334c8000-7f93334ca000 r--s 00002000 08:04 7733753                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.5.0/81241ff7078ef14f42ea2a8995fa09c096256e6b/javawriter-2.5.0.jar
+7f93334ca000-7f93334cb000 r--s 00002000 08:04 7733747                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.1.2/6dcc08f90f678ac33e5ef78c3c752b6f59e63e0c/error_prone_annotations-2.1.2.jar
+7f93334cb000-7f93334e1000 r--s 001f6000 08:04 7603366                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.analytics-library/protos/26.1.2/ba53bcde9703b2bf9871128952dce844c5d743fa/protos-26.1.2.jar
+7f93334e1000-7f93334e7000 r--s 0007f000 08:04 7733741                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/aapt2-proto/0.1.0/d1eb93a21a8d3590c3bfac574a8b6dffb2dbd21c/aapt2-proto-0.1.0.jar
+7f93334e7000-7f93334eb000 r--s 0002f000 08:04 7733739                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs/1.1/8fbd0579dc68aba6186935cc1bee21d2f3e7ec1c/jimfs-1.1.jar
+7f93334eb000-7f93334ef000 r--s 00029000 08:04 7603363                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools/common/26.1.2/c31bbd68c51ed0ef3b8d7cdd5615acf762473887/common-26.1.2.jar
+7f93334ef000-7f93334f1000 r--s 00006000 08:04 7734139                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/26.1.2/eb39925fee6e726468fc10344ec988c086301ed7/dvlib-26.1.2.jar
+7f93334f1000-7f93334f4000 r--s 00014000 08:04 7734138                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/26.1.2/3697abf628d30042c1082ea846454dfd1e8da3e/layoutlib-api-26.1.2.jar
+7f93334f4000-7f93334f5000 r--s 00005000 08:04 7603360                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.analytics-library/shared/26.1.2/bc21fe64fdaa64e59672e7d546d373f430e7557c/shared-26.1.2.jar
+7f93334f5000-7f93334f7000 r--s 00004000 08:04 7603359                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.analytics-library/tracker/26.1.2/2d2260da92e50ac072f89d60a596d03aab3a8757/tracker-26.1.2.jar
+7f93334f7000-7f93334fd000 r--s 0004d000 08:04 7603361                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/26.1.2/1d423e621fb5c89fed13e41d0ed026cf5d8d7e7b/ddmlib-26.1.2.jar
+7f93334fd000-7f93334fe000 r--s 00003000 08:04 7603358                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/3.1.2/ffb00b786822df6538377a90df9f2d11c022efc3/builder-test-api-3.1.2.jar
+7f93334fe000-7f9333500000 r--s 0000f000 08:04 7733731                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.4.0/96aba8ab71c16018c6adf66771ce15c6491bc0fe/protobuf-java-util-3.4.0.jar
+7f9333500000-7f933351f000 r--s 0016b000 08:04 7733743                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value/1.5.2/1b94ab7ec707e2220a0d1a7517488d1843236345/auto-value-1.5.2.jar
+7f933351f000-7f9333521000 r--s 00002000 08:04 6818641                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-gradle/5.3.3/ad23a0505f58d0dfc95bb1472decc397460406c9/proguard-gradle-5.3.3.jar
+7f9333521000-7f9333523000 r--s 0000f000 08:04 6949891                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/4.9/ee9e9eaa0a35360dcfeac129ff4923215fd65904/jopt-simple-4.9.jar
+7f9333523000-7f9333525000 r--s 0000c000 08:04 6298839                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.1/5ef31c4fe953b1fd00b8a88fa1d6820e8785bb45/asm-5.1.jar
+7f9333525000-7f9333527000 r--s 00006000 08:04 6687928                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.1/87b38c12a0ea645791ead9d3e74ae5268d1d6c34/asm-tree-5.1.jar
+7f9333527000-7f9333528000 r--s 0000a000 08:04 6427669                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/5.1/b60e33a6bd0d71831e0c249816d01e6c1dd90a47/asm-util-5.1.jar
+7f9333528000-7f933352a000 r--s 0000a000 08:04 6298837                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.1/25d8a575034dd9cfcb375a39b5334f0ba9c8474e/asm-commons-5.1.jar
+7f933352a000-7f933352b000 r--s 00004000 08:04 6427667                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/5.1/6d1bf8989fc7901f868bee3863c44f21aa63d110/asm-analysis-5.1.jar
+7f933352b000-7f933352c000 r--s 00000000 08:04 6165253                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/85bee1acea9e27152b920746c68133b30b11431/transform-api-2.0.0-deprecated-use-gradle-api.jar
+7f933352c000-7f933352d000 r--s 00002000 08:04 6818639                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.2.0/505f55b9619bbc5f5e26c77427dd24a6a441eef1/kotlin-stdlib-jre8-1.2.0.jar
+7f933352d000-7f9333537000 r--s 0009c000 08:04 7603356                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/26.1.2/94697a9dff499b64b6e101bedb89a89825150af/sdklib-26.1.2.jar
+7f9333537000-7f9333549000 r--s 0010b000 08:04 7603357                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/26.1.2/2cf773af3fb0e1bbd56a80fc6903a9d2a40a248/sdk-common-26.1.2.jar
+7f9333549000-7f9333573000 r--s 0027e000 08:04 5773858                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/3.1.2/ccab33656c1baa6514d88f4d9356db19d0e9823b/gradle-core-3.1.2.jar
+7f9333573000-7f93336b4000 r--s 02315000 08:04 4587904                    /data/EMBITEL/emb-ankitom/.gradle/caches/jars-3/e21abb8cdbab4501d66261b42046af7b/android.jar
+7f93336b4000-7f93336fb000 r--s 0023e000 08:04 4721843                    /data/EMBITEL/emb-ankitom/.gradle/caches/jars-3/367c9b9c4fab7054d02cacd70b53894c/gradle-core-4.0.jar
+7f93336fb000-7f93336fe000 ---p 00000000 00:00 0 
+7f93336fe000-7f93339fc000 rw-p 00000000 00:00 0 
+7f93339fc000-7f93339ff000 ---p 00000000 00:00 0 
+7f93339ff000-7f9333afd000 rw-p 00000000 00:00 0 
+7f9333afd000-7f9333b00000 ---p 00000000 00:00 0 
+7f9333b00000-7f9333bfe000 rw-p 00000000 00:00 0 
+7f9333bfe000-7f9333c01000 ---p 00000000 00:00 0 
+7f9333c01000-7f9333eff000 rw-p 00000000 00:00 0 
+7f9333eff000-7f9333f02000 ---p 00000000 00:00 0 
+7f9333f02000-7f9334000000 rw-p 00000000 00:00 0 
+7f9334000000-7f9334029000 rw-p 00000000 00:00 0 
+7f9334029000-7f9338000000 ---p 00000000 00:00 0 
+7f9338000000-7f9338006000 r--s 00030000 08:04 7734137                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools/repository/26.1.2/c8209ccb8ee0e5e3f293fd71d2a827f440ab811c/repository-26.1.2.jar
+7f9338006000-7f9338009000 r--s 0002a000 08:04 7603355                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/26.1.2/79f398427650c76f0c66c89f10e4886a1fe68c26/manifest-merger-26.1.2.jar
+7f9338009000-7f933800f000 r--s 00040000 08:04 6034409                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.databinding/compilerCommon/3.1.2/be65c11ded4242932046f23ecfa5c7ccb0e98f46/compilerCommon-3.1.2.jar
+7f933800f000-7f9338013000 r--s 00013000 08:04 5902795                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-api/3.1.2/427e25639a55911cadcf70657c9b2ded2ad6af2b/gradle-api-3.1.2.jar
+7f9338013000-7f9338014000 r--s 00004000 08:04 5773859                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-gradle-api/26.1.2/8c54aedfe9da66e64402de04883cee083c127a3b/lint-gradle-api-26.1.2.jar
+7f9338014000-7f933801b000 r--s 00069000 08:04 5641935                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/bundletool/0.1.0-alpha01/f7c303e37818223bd98566fcbea29aa0964c4d06/bundletool-0.1.0-alpha01.jar
+7f933801b000-7f933801e000 r--s 0001a000 08:04 5517451                    /data/EMBITEL/emb-ankitom/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/3.1.2/1608fa49add4d13366db7844998c6e59711f7e2a/gradle-3.1.2.jar
+7f933801e000-7f9338024000 r--s 0002b000 08:04 4721845                    /data/EMBITEL/emb-ankitom/.gradle/caches/jars-3/d49eb9780029713c9c8fdae1e164e02e/gradle-messaging-4.0.jar
+7f9338024000-7f9338029000 r--s 00041000 08:04 4589700                    /data/EMBITEL/emb-ankitom/.gradle/caches/jars-3/aee7855bdca982f949ec3186b02c526c/commons-lang-2.6.jar
+7f9338029000-7f9338034000 r--s 00053000 08:04 4589698                    /data/EMBITEL/emb-ankitom/.gradle/caches/jars-3/c06e76c9368a06aff37befc193dcbbeb/gradle-base-services-4.0.jar
+7f9338034000-7f933805c000 r--s 001cf000 08:04 4589696                    /data/EMBITEL/emb-ankitom/.gradle/caches/jars-3/ca08947540925f2914d21c73bec56045/guava-jdk5-17.0.jar
+7f933805c000-7f9338069000 r--s 00043000 08:04 4589694                    /data/EMBITEL/emb-ankitom/.gradle/caches/jars-3/77c29fea57888ca08f7c4993bfcb0df4/gradle-tooling-api-4.0.jar
+7f9338069000-7f93380e2000 r--s 010fd000 08:04 5777363                    /data/EMBITEL/emb-ankitom/android-studio/jre/lib/tools.jar
+7f93380e2000-7f93380e5000 ---p 00000000 00:00 0 
+7f93380e5000-7f93381e3000 rw-p 00000000 00:00 0 
+7f93381e3000-7f93381e6000 ---p 00000000 00:00 0 
+7f93381e6000-7f93382e4000 rw-p 00000000 00:00 0 
+7f93382e4000-7f93382e7000 ---p 00000000 00:00 0 
+7f93382e7000-7f93383e5000 rw-p 00000000 00:00 0 
+7f93383e5000-7f93383e8000 ---p 00000000 00:00 0 
+7f93383e8000-7f93384e6000 rw-p 00000000 00:00 0 
+7f93384e6000-7f93384e9000 ---p 00000000 00:00 0 
+7f93384e9000-7f93385e7000 rw-p 00000000 00:00 0 
+7f93385e7000-7f93385ee000 r--s 00000000 08:03 9967548                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f93385ee000-7f93385f1000 ---p 00000000 00:00 0 
+7f93385f1000-7f93386ef000 rw-p 00000000 00:00 0 
+7f93386ef000-7f93386f4000 r--s 0009a000 08:04 5777498                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/jsse.jar
+7f93386f4000-7f93388f4000 rw-p 00000000 00:00 0 
+7f93388f4000-7f93388fd000 r-xp 00000000 08:04 5777447                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libmanagement.so
+7f93388fd000-7f9338afc000 ---p 00009000 08:04 5777447                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libmanagement.so
+7f9338afc000-7f9338afd000 r--p 00008000 08:04 5777447                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libmanagement.so
+7f9338afd000-7f9338afe000 rw-p 00009000 08:04 5777447                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libmanagement.so
+7f9338afe000-7f9338b00000 r--s 00007000 08:04 4334549                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-tooling-api-builders-4.4.jar
+7f9338b00000-7f9338b04000 r--s 00014000 08:04 4334534                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-native-4.4.jar
+7f9338b04000-7f9338b06000 r--s 00009000 08:04 4334638                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/hamcrest-core-1.3.jar
+7f9338b06000-7f9338b0b000 r--s 0005a000 08:04 4334595                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/bsh-2.0b6.jar
+7f9338b0b000-7f9338b0d000 r--s 00006000 08:04 4334634                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/jcommander-1.12.jar
+7f9338b0d000-7f9338b13000 r--s 00033000 08:04 4334635                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/snakeyaml-1.6.jar
+7f9338b13000-7f9338b1c000 r--s 00089000 08:04 4334593                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/testng-6.3.1.jar
+7f9338b1c000-7f9338b24000 r--s 00045000 08:04 4334594                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/junit-4.12.jar
+7f9338b24000-7f9338b28000 r--s 00019000 08:04 4334555                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-jvm-4.4.jar
+7f9338b28000-7f9338b30000 r--s 00030000 08:04 4334561                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-base-4.4.jar
+7f9338b30000-7f9338b37000 r--s 00043000 08:04 4334588                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/bcpg-jdk15on-1.58.jar
+7f9338b37000-7f9338b39000 r--s 0000c000 08:04 4334532                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-signing-4.4.jar
+7f9338b39000-7f9338b3b000 r--s 00007000 08:04 4334540                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-scala-4.4.jar
+7f9338b3b000-7f9338b3c000 r--s 00004000 08:04 4334571                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-sftp-4.4.jar
+7f9338b3c000-7f9338b4a000 r--s 00087000 08:04 4334603                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aws-java-sdk-core-1.11.6.jar
+7f9338b4a000-7f9338b51000 r--s 00057000 08:04 4334602                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aws-java-sdk-kms-1.11.6.jar
+7f9338b51000-7f9338b5e000 r--s 0008e000 08:04 4334601                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aws-java-sdk-s3-1.11.6.jar
+7f9338b5e000-7f9338b60000 r--s 00004000 08:04 4334566                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-s3-4.4.jar
+7f9338b60000-7f9338b70000 r--s 00088000 08:04 4334607                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/joda-time-2.8.2.jar
+7f9338b70000-7f9338b82000 r--s 0011e000 08:04 4334606                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/jackson-databind-2.8.9.jar
+7f9338b82000-7f9338b85000 r--s 0000b000 08:04 4334605                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/jackson-annotations-2.8.9.jar
+7f9338b85000-7f9338b89000 r--s 00042000 08:04 4334604                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/jackson-core-2.8.9.jar
+7f9338b89000-7f9338b8a000 r--s 00001000 08:04 4334578                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/google-http-client-jackson2-1.22.0.jar
+7f9338b8a000-7f9338b93000 r--s 0004f000 08:04 4334579                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/google-http-client-1.22.0.jar
+7f9338b93000-7f9338b95000 r--s 0000d000 08:04 4334577                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/google-oauth-client-1.22.0.jar
+7f9338b95000-7f9338b9a000 r--s 0002c000 08:04 4334576                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/google-api-client-1.22.0.jar
+7f9338b9a000-7f9338b9d000 r--s 00016000 08:04 4334575                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/google-api-services-storage-v1-rev78-1.22.0.jar
+7f9338b9d000-7f9338b9f000 r--s 00003000 08:04 4334567                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-gcs-4.4.jar
+7f9338b9f000-7f9338ba1000 r--s 00010000 08:04 4334562                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-reporting-4.4.jar
+7f9338ba1000-7f9338ba3000 r--s 00005000 08:04 4334563                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-publish-4.4.jar
+7f9338ba3000-7f9338ba5000 r--s 00009000 08:04 4334581                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/commons-cli-1.2.jar
+7f9338ba5000-7f9338bab000 r--s 00038000 08:04 4334548                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugins-4.4.jar
+7f9338bab000-7f9338bad000 r--s 00009000 08:04 4334536                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugin-development-4.4.jar
+7f9338bad000-7f9338bb4000 r--s 0002e000 08:04 4334543                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-play-4.4.jar
+7f9338bb4000-7f9338bc5000 r--s 00069000 08:04 4334559                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-native-4.4.jar
+7f9338bc5000-7f9338bc9000 r--s 0001b000 08:04 4334558                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-jvm-4.4.jar
+7f9338bc9000-7f9338bd0000 r--s 00028000 08:04 4334564                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-base-4.4.jar
+7f9338bd0000-7f9338bfb000 r--s 00247000 08:04 4334582                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/biz.aQute.bndlib-3.4.0.jar
+7f9338bfb000-7f9338bfc000 r--s 00004000 08:04 4334531                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-osgi-4.4.jar
+7f9338bfc000-7f9338bff000 r--s 0000c000 08:04 4334585                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/pmaven-groovy-0.8-20100325.jar
+7f9338bff000-7f9338c00000 r--s 00004000 08:04 4334584                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/pmaven-common-0.8-20100325.jar
+7f9338c00000-7f9338c06000 r--s 00025000 08:04 4334537                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-maven-4.4.jar
+7f9338c06000-7f9338c09000 r--s 0000b000 08:04 4334554                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-scala-4.4.jar
+7f9338c09000-7f9338c12000 r--s 00036000 08:04 4334535                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-native-4.4.jar
+7f9338c12000-7f9338c14000 r--s 00005000 08:04 4334557                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-jvm-4.4.jar
+7f9338c14000-7f9338c1b000 r--s 00030000 08:04 4334556                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-java-4.4.jar
+7f9338c1b000-7f9338c1e000 r--s 0000a000 08:04 4334553                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-groovy-4.4.jar
+7f9338c1e000-7f9338c25000 r--s 00035000 08:04 4334591                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/simple-4.1.21.jar
+7f9338c25000-7f9338c31000 r--s 00100000 08:04 4334589                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/rhino-1.7R3.jar
+7f9338c31000-7f9338c35000 r--s 00011000 08:04 4334544                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-javascript-4.4.jar
+7f9338c35000-7f9338c38000 r--s 00011000 08:04 4334546                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-jacoco-4.4.jar
+7f9338c38000-7f9338c3c000 r--s 0000e000 08:04 4334545                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ivy-4.4.jar
+7f9338c3c000-7f9338c3d000 r--s 00002000 08:04 4334538                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-play-4.4.jar
+7f9338c3d000-7f9338c3e000 r--s 00011000 08:04 4334592                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/dd-plist-1.20.jar
+7f9338c3e000-7f9338c44000 r--s 00027000 08:04 4334533                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-native-4.4.jar
+7f9338c44000-7f9338c4e000 r--s 00056000 08:04 4334539                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-4.4.jar
+7f9338c4e000-7f9338c50000 r--s 00007000 08:04 4334542                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ear-4.4.jar
+7f9338c50000-7f9338c52000 r--s 00005000 08:04 4334574                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/jatl-0.2.2.jar
+7f9338c52000-7f9338c58000 r--s 00039000 08:04 4334560                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-diagnostics-4.4.jar
+7f9338c58000-7f9338c5a000 r--s 0000b000 08:04 4334551                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-composite-builds-4.4.jar
+7f9338c5a000-7f9338c5f000 r--s 00026000 08:04 4334529                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-code-quality-4.4.jar
+7f9338c5f000-7f9338c64000 r--s 00022000 08:04 4334547                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-init-4.4.jar
+7f9338c64000-7f9338c7d000 r--s 00135000 08:04 4334598                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/xercesImpl-2.11.0.jar
+7f9338c7d000-7f9338def000 r-xp 00000000 08:03 9306624                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f9338def000-7f9338fef000 ---p 00172000 08:03 9306624                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f9338fef000-7f9338ff9000 r--p 00172000 08:03 9306624                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f9338ff9000-7f9338ffb000 rw-p 0017c000 08:03 9306624                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f9338ffb000-7f933c000000 rw-p 00000000 00:00 0 
+7f933c000000-7f933c021000 rw-p 00000000 00:00 0 
+7f933c021000-7f9340000000 ---p 00000000 00:00 0 
+7f9340000000-7f9340007000 r--s 0005d000 08:04 4334541                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-comparison-4.4.jar
+7f9340007000-7f9340008000 r--s 00002000 08:04 4334568                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-cache-http-4.4.jar
+7f9340008000-7f934000a000 r--s 00008000 08:04 4334530                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-antlr-4.4.jar
+7f934000a000-7f934000c000 r--s 00004000 08:04 4334552                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-announce-4.4.jar
+7f934000c000-7f934000e000 r--s 00009000 08:04 4334461                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-builders-0.13.1.jar
+7f934000e000-7f9340011000 r--s 0000b000 08:04 4334565                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugin-use-4.4.jar
+7f9340011000-7f9340012000 r--s 00000000 08:04 4334470                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-runtime-api-info-4.4.jar
+7f9340012000-7f9340015000 r--s 0001c000 08:04 4334597                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/nekohtml-1.9.14.jar
+7f9340015000-7f9340018000 r--s 0000c000 08:04 4334570                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-http-4.4.jar
+7f9340018000-7f934001f000 r--s 00049000 08:04 4334636                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/httpcore-4.4.4.jar
+7f934001f000-7f9340025000 r--s 00033000 08:04 4334587                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/commons-codec-1.6.jar
+7f9340025000-7f934002b000 r--s 0005b000 08:04 4334596                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/jcifs-1.3.17.jar
+7f934002b000-7f9340038000 r--s 000a4000 08:04 4334580                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/httpclient-4.4.1.jar
+7f9340038000-7f934005b000 r--s 00223000 08:04 4334637                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/org.eclipse.jgit-4.5.3.201708160445-r.jar
+7f934005b000-7f934005c000 r--s 00005000 08:04 4334573                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-version-control-4.4.jar
+7f934005c000-7f934005d000 r--s 00000000 08:04 4334473                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-installation-beacon-4.4.jar
+7f934005d000-7f93400b0000 r--s 00373000 08:04 4334609                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/bcprov-jdk15on-1.58.jar
+7f93400b0000-7f93400b4000 r--s 0001d000 08:04 4334608                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/xbean-reflect-3.4.jar
+7f93400b4000-7f93400b6000 r--s 0000a000 08:04 4334610                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-settings-3.0.4.jar
+7f93400b6000-7f93400b9000 r--s 00008000 08:04 4334611                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-settings-builder-3.0.4.jar
+7f93400b9000-7f93400bc000 r--s 00034000 08:04 4334612                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/plexus-utils-2.1.jar
+7f93400bc000-7f93400be000 r--s 0000d000 08:04 4334613                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/plexus-interpolation-1.14.jar
+7f93400be000-7f93400c0000 r--s 00000000 08:04 4334586                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/plexus-component-annotations-1.5.5.jar
+7f93400c0000-7f93400c7000 r--s 0002e000 08:04 4334614                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/plexus-container-default-1.5.5.jar
+7f93400c7000-7f93400c9000 r--s 0000a000 08:04 4334615                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/plexus-classworlds-2.4.jar
+7f93400c9000-7f93400cb000 r--s 00002000 08:04 4334616                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/plexus-cipher-1.7.jar
+7f93400cb000-7f93400cc000 r--s 00006000 08:04 4334617                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/plexus-sec-dispatcher-1.3.jar
+7f93400cc000-7f93400d2000 r--s 0003f000 08:04 4334618                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-compat-3.0.4.jar
+7f93400d2000-7f93400d6000 r--s 00021000 08:04 4334619                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-model-builder-3.0.4.jar
+7f93400d6000-7f93400d8000 r--s 00026000 08:04 4334620                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-model-3.0.4.jar
+7f93400d8000-7f93400da000 r--s 0000b000 08:04 4334621                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-artifact-3.0.4.jar
+7f93400da000-7f93400dc000 r--s 00006000 08:04 4334622                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-repository-metadata-3.0.4.jar
+7f93400dc000-7f93400de000 r--s 0000b000 08:04 4334623                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-plugin-api-3.0.4.jar
+7f93400de000-7f93400e0000 r--s 0000c000 08:04 4334624                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-aether-provider-3.0.4.jar
+7f93400e0000-7f93400e1000 r--s 00002000 08:04 4334625                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/wagon-file-2.4.jar
+7f93400e1000-7f93400e2000 r--s 00002000 08:04 4334626                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/wagon-http-2.4.jar
+7f93400e2000-7f93400e4000 r--s 0000b000 08:04 4334627                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/wagon-provider-api-2.4.jar
+7f93400e4000-7f93400e5000 r--s 00007000 08:04 4334628                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/wagon-http-shared4-2.4.jar
+7f93400e5000-7f93400e8000 r--s 00013000 08:04 4334629                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aether-api-1.13.1.jar
+7f93400e8000-7f93400eb000 r--s 0001d000 08:04 4334630                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aether-impl-1.13.1.jar
+7f93400eb000-7f93400f7000 r--s 0007d000 08:04 4334583                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/maven-core-3.0.4.jar
+7f93400f7000-7f934011d000 r--s 00133000 08:04 4334569                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-dependency-management-4.4.jar
+7f934011d000-7f9340133000 r-xp 00000000 08:03 26874357                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f9340133000-7f9340332000 ---p 00016000 08:03 26874357                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f9340332000-7f9340333000 rw-p 00015000 08:03 26874357                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f9340333000-7f9340334000 r--s 00003000 08:04 4334631                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aether-spi-1.13.1.jar
+7f9340334000-7f9340338000 r--s 0001c000 08:04 4334632                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aether-util-1.13.1.jar
+7f9340338000-7f934033a000 r--s 00006000 08:04 4334633                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/aether-connector-wagon-1.13.1.jar
+7f934033a000-7f934033f000 r--s 00034000 08:04 4334590                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gson-2.7.jar
+7f934033f000-7f9340344000 r--s 00040000 08:04 4334600                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/jsch-0.1.54.jar
+7f9340344000-7f9340353000 r--s 000d9000 08:04 4334599                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/ivy-2.2.0.jar
+7f9340353000-7f9340356000 r--s 0000d000 08:04 4334572                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-workers-4.4.jar
+7f9340356000-7f934035b000 r-xp 00000000 08:04 4335117                    /data/EMBITEL/emb-ankitom/.gradle/native/25/linux-amd64/libnative-platform.so
+7f934035b000-7f934055a000 ---p 00005000 08:04 4335117                    /data/EMBITEL/emb-ankitom/.gradle/native/25/linux-amd64/libnative-platform.so
+7f934055a000-7f934055b000 rw-p 00004000 08:04 4335117                    /data/EMBITEL/emb-ankitom/.gradle/native/25/linux-amd64/libnative-platform.so
+7f934055b000-7f934056c000 r-xp 00000000 08:04 5777470                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnio.so
+7f934056c000-7f934076b000 ---p 00011000 08:04 5777470                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnio.so
+7f934076b000-7f934076c000 r--p 00010000 08:04 5777470                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnio.so
+7f934076c000-7f934076d000 rw-p 00011000 08:04 5777470                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnio.so
+7f934076d000-7f9340783000 r-xp 00000000 08:04 5777450                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnet.so
+7f9340783000-7f9340983000 ---p 00016000 08:04 5777450                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnet.so
+7f9340983000-7f9340984000 r--p 00016000 08:04 5777450                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnet.so
+7f9340984000-7f9340985000 rw-p 00017000 08:04 5777450                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libnet.so
+7f9340985000-7f9340986000 r--s 00006000 08:04 4334472                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-wrapper-4.4.jar
+7f9340986000-7f9340994000 r--s 00046000 08:04 4334471                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-tooling-api-4.4.jar
+7f9340994000-7f9340995000 r--s 00002000 08:04 4334468                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-stdlib-jre8-1.1.51.jar
+7f9340995000-7f9340996000 r--s 00000000 08:04 4334467                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-stdlib-jre7-1.1.51.jar
+7f9340996000-7f93409a5000 r--s 000c9000 08:04 4334466                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-stdlib-1.1.51.jar
+7f93409a5000-7f93409a7000 r--s 00002000 08:04 4334465                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-sam-with-receiver-compiler-plugin-1.1.51.jar
+7f93409a7000-7f93409da000 r--s 0022b000 08:04 4334464                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-reflect-1.1.51.jar
+7f93409da000-7f9340bbc000 r--s 01a42000 08:04 4334463                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-compiler-embeddable-1.1.51.jar
+7f9340bbc000-7f9340bbd000 r--s 00000000 08:04 4334462                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-models-0.13.1.jar
+7f9340bbd000-7f9340bbf000 r--s 00003000 08:04 4334459                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/annotations-13.0.jar
+7f9340bbf000-7f9340bca000 r--s 00082000 08:04 4334460                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-0.13.1.jar
+7f9340bca000-7f9340bce000 r--s 00012000 08:04 4334477                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-build-cache-4.4.jar
+7f9340bce000-7f9340bd4000 r--s 0002e000 08:04 4334481                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-persistent-cache-4.4.jar
+7f9340bd4000-7f9340bd8000 r--s 00014000 08:04 4334480                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-resources-4.4.jar
+7f9340bd8000-7f9340bd9000 r--s 00003000 08:04 4334488                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-build-option-4.4.jar
+7f9340bd9000-7f9340bdb000 r--s 00005000 08:04 4334489                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-cli-4.4.jar
+7f9340bdb000-7f9340bdd000 r--s 00003000 08:04 4334496                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/jcl-over-slf4j-1.7.10.jar
+7f9340bdd000-7f9340bde000 r--s 00005000 08:04 4334495                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/log4j-over-slf4j-1.7.10.jar
+7f9340bde000-7f9340be0000 r--s 00000000 08:04 4334494                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/jul-to-slf4j-1.7.10.jar
+7f9340be0000-7f9340be7000 r--s 0002f000 08:04 4334478                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-logging-4.4.jar
+7f9340be7000-7f9340bf7000 r--s 00082000 08:04 4334484                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-model-core-4.4.jar
+7f9340bf7000-7f9340bf9000 r--s 00006000 08:04 4334485                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-base-services-groovy-4.4.jar
+7f9340bf9000-7f9340bfb000 r--s 00007000 08:04 4334483                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-model-groovy-4.4.jar
+7f9340bfb000-7f9340bfc000 r--s 00002000 08:04 4334509                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-docs-4.4.jar
+7f9340bfc000-7f9340c05000 r--s 0002d000 08:04 4334508                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/xml-apis-1.4.01.jar
+7f9340c05000-7f9340c0f000 r--s 00078000 08:04 4334507                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/commons-compress-1.14.jar
+7f9340c0f000-7f9340c1c000 r--s 00083000 08:04 4334505                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/commons-collections-3.2.2.jar
+7f9340c1c000-7f9340c1d000 r--s 00000000 08:04 4334504                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/javax.inject-1.jar
+7f9340c1d000-7f9340c8d000 r--s 00646000 08:04 4334502                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/groovy-all-2.4.12.jar
+7f9340c8d000-7f9340c90000 r--s 00023000 08:04 4334510                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/jansi-1.14.jar
+7f9340c90000-7f9340c91000 r--s 00004000 08:04 4334512                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-freebsd-amd64-libcpp-0.14.jar
+7f9340c91000-7f9340c92000 r--s 00004000 08:04 4334513                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-freebsd-amd64-libstdcpp-0.14.jar
+7f9340c92000-7f9340c93000 r--s 00004000 08:04 4334514                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-freebsd-i386-libcpp-0.14.jar
+7f9340c93000-7f9340c94000 r--s 00003000 08:04 4334515                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-freebsd-i386-libstdcpp-0.14.jar
+7f9340c94000-7f9340c95000 r--s 00002000 08:04 4334516                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-linux-amd64-0.14.jar
+7f9340c95000-7f9340c96000 r--s 00002000 08:04 4334517                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-linux-i386-0.14.jar
+7f9340c96000-7f9340c98000 r--s 00002000 08:04 4334518                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-osx-amd64-0.14.jar
+7f9340c98000-7f9340c99000 r--s 00003000 08:04 4334519                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-osx-i386-0.14.jar
+7f9340c99000-7f9340cc1000 r--s 001cf000 08:04 4334498                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/guava-jdk5-17.0.jar
+7f9340cc1000-7f9340cfd000 r--s 00204000 08:04 4334474                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-4.4.jar
+7f9340cfd000-7f9340cfe000 ---p 00000000 00:00 0 
+7f9340cfe000-7f9340dfe000 rw-p 00000000 00:00 0 
+7f9340dfe000-7f9340e01000 ---p 00000000 00:00 0 
+7f9340e01000-7f9340eff000 rw-p 00000000 00:00 0 
+7f9340eff000-7f9340f02000 ---p 00000000 00:00 0 
+7f9340f02000-7f9344000000 rw-p 00000000 00:00 0 
+7f9344000000-7f9344037000 rw-p 00000000 00:00 0 
+7f9344037000-7f9348000000 ---p 00000000 00:00 0 
+7f9348000000-7f9348002000 r--s 0000b000 08:04 4334520                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-windows-amd64-0.14.jar
+7f9348002000-7f9348003000 r--s 0000b000 08:04 4334521                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-windows-i386-0.14.jar
+7f9348003000-7f9348004000 r--s 00001000 08:04 4334522                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-linux-amd64-ncurses5-0.14.jar
+7f9348004000-7f9348005000 r--s 00001000 08:04 4334523                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-linux-amd64-ncurses6-0.14.jar
+7f9348005000-7f9348006000 r--s 00001000 08:04 4334524                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-linux-i386-ncurses5-0.14.jar
+7f9348006000-7f934800a000 r--s 00012000 08:04 4334506                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-0.14.jar
+7f934800a000-7f934800d000 r--s 0000c000 08:04 4334482                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-native-4.4.jar
+7f934800d000-7f934800f000 r--s 0000f000 08:04 4334491                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/reflectasm-1.07-shaded.jar
+7f934800f000-7f9348011000 r--s 00000000 08:04 4334526                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/minlog-1.2.jar
+7f9348011000-7f9348015000 r--s 00026000 08:04 4334490                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kryo-2.20.jar
+7f9348015000-7f934801b000 r--s 0002b000 08:04 4334486                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-messaging-4.4.jar
+7f934801b000-7f934801e000 ---p 00000000 00:00 0 
+7f934801e000-7f934811c000 rw-p 00000000 00:00 0 
+7f934811c000-7f934811f000 ---p 00000000 00:00 0 
+7f934811f000-7f934821d000 rw-p 00000000 00:00 0 
+7f934821d000-7f9348220000 ---p 00000000 00:00 0 
+7f9348220000-7f934831e000 rw-p 00000000 00:00 0 
+7f934831e000-7f93485f6000 r--p 00000000 08:03 9307916                    /usr/lib/locale/locale-archive
+7f93485f6000-7f93485f9000 ---p 00000000 00:00 0 
+7f93485f9000-7f93486f7000 rw-p 00000000 00:00 0 
+7f93486f7000-7f93486fa000 ---p 00000000 00:00 0 
+7f93486fa000-7f93487f8000 rw-p 00000000 00:00 0 
+7f93487f8000-7f93487f9000 ---p 00000000 00:00 0 
+7f93487f9000-7f9349000000 rw-p 00000000 00:00 0 
+7f9349000000-7f9349ec0000 rwxp 00000000 00:00 0 
+7f9349ec0000-7f9358000000 ---p 00000000 00:00 0 
+7f9358000000-7f9358e63000 rw-p 00000000 00:00 0 
+7f9358e63000-7f935c000000 ---p 00000000 00:00 0 
+7f935c000000-7f935c001000 r--s 00001000 08:04 4334525                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/native-platform-linux-i386-ncurses6-0.14.jar
+7f935c001000-7f935c003000 r--s 00007000 08:04 4334527                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/objenesis-1.2.jar
+7f935c003000-7f935c005000 r--s 00006000 08:04 4334479                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-process-services-4.4.jar
+7f935c005000-7f935c007000 r--s 00000000 08:04 4334475                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-jvm-services-4.4.jar
+7f935c007000-7f935c008000 r--s 00000000 08:04 4334501                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/jcip-annotations-1.0.jar
+7f935c008000-7f935c00d000 r--s 00041000 08:04 4334500                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/commons-lang-2.6.jar
+7f935c00d000-7f935c010000 r--s 00006000 08:04 4334499                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/jsr305-1.3.9.jar
+7f935c010000-7f935c014000 r--s 00027000 08:04 4334493                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/commons-io-2.2.jar
+7f935c014000-7f935c033000 r--s 001d5000 08:04 4334503                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/ant-1.9.9.jar
+7f935c033000-7f935c90d000 rw-p 00000000 00:00 0 
+7f935c90d000-7f935cadd000 r--s 03c46000 08:04 5777485                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/rt.jar
+7f935cadd000-7f935d653000 rw-p 00000000 00:00 0 
+7f935d653000-7f935d654000 ---p 00000000 00:00 0 
+7f935d654000-7f935d754000 rw-p 00000000 00:00 0 
+7f935d754000-7f935d755000 ---p 00000000 00:00 0 
+7f935d755000-7f935d855000 rw-p 00000000 00:00 0 
+7f935d855000-7f935d856000 ---p 00000000 00:00 0 
+7f935d856000-7f935d956000 rw-p 00000000 00:00 0 
+7f935d956000-7f935d957000 ---p 00000000 00:00 0 
+7f935d957000-7f935daad000 rw-p 00000000 00:00 0 
+7f935daad000-7f935dc57000 ---p 00000000 00:00 0 
+7f935dc57000-7f935dcad000 rw-p 00000000 00:00 0 
+7f935dcad000-7f935de57000 ---p 00000000 00:00 0 
+7f935de57000-7f935dee6000 rw-p 00000000 00:00 0 
+7f935dee6000-7f935df57000 ---p 00000000 00:00 0 
+7f935df57000-7f935df93000 rw-p 00000000 00:00 0 
+7f935df93000-7f935e318000 ---p 00000000 00:00 0 
+7f935e318000-7f935e332000 r-xp 00000000 08:04 5777446                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libzip.so
+7f935e332000-7f935e532000 ---p 0001a000 08:04 5777446                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libzip.so
+7f935e532000-7f935e533000 r--p 0001a000 08:04 5777446                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libzip.so
+7f935e533000-7f935e534000 rw-p 0001b000 08:04 5777446                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libzip.so
+7f935e534000-7f935e537000 r-xp 00000000 08:03 9569315                    /opt/pbis/lib/libuuid.so.0.0.0
+7f935e537000-7f935e636000 ---p 00003000 08:03 9569315                    /opt/pbis/lib/libuuid.so.0.0.0
+7f935e636000-7f935e637000 rw-p 00002000 08:03 9569315                    /opt/pbis/lib/libuuid.so.0.0.0
+7f935e637000-7f935e6c3000 r-xp 00000000 08:03 9569311                    /opt/pbis/lib/liblwbase_nothr.so.0.0.0
+7f935e6c3000-7f935e7c2000 ---p 0008c000 08:03 9569311                    /opt/pbis/lib/liblwbase_nothr.so.0.0.0
+7f935e7c2000-7f935e7ee000 rw-p 0008b000 08:03 9569311                    /opt/pbis/lib/liblwbase_nothr.so.0.0.0
+7f935e7ee000-7f935e7f0000 rw-p 00000000 00:00 0 
+7f935e7f0000-7f935e815000 r-xp 00000000 08:03 9569340                    /opt/pbis/lib/liblsacommon.so.0.0.0
+7f935e815000-7f935e915000 ---p 00025000 08:03 9569340                    /opt/pbis/lib/liblsacommon.so.0.0.0
+7f935e915000-7f935e921000 rw-p 00025000 08:03 9569340                    /opt/pbis/lib/liblsacommon.so.0.0.0
+7f935e921000-7f935e94a000 r-xp 00000000 08:03 9569347                    /opt/pbis/lib/liblwadvapi_nothr.so.0.0.0
+7f935e94a000-7f935ea4a000 ---p 00029000 08:03 9569347                    /opt/pbis/lib/liblwadvapi_nothr.so.0.0.0
+7f935ea4a000-7f935ea52000 rw-p 00029000 08:03 9569347                    /opt/pbis/lib/liblwadvapi_nothr.so.0.0.0
+7f935ea52000-7f935ea70000 r-xp 00000000 08:03 9569307                    /opt/pbis/lib/liblwmsg_nothr.so.0.0.0
+7f935ea70000-7f935eb6f000 ---p 0001e000 08:03 9569307                    /opt/pbis/lib/liblwmsg_nothr.so.0.0.0
+7f935eb6f000-7f935eb72000 rw-p 0001d000 08:03 9569307                    /opt/pbis/lib/liblwmsg_nothr.so.0.0.0
+7f935eb72000-7f935eb75000 r-xp 00000000 08:03 9569282                    /opt/pbis/lib/liblsaauth.so.0.0.0
+7f935eb75000-7f935ec74000 ---p 00003000 08:03 9569282                    /opt/pbis/lib/liblsaauth.so.0.0.0
+7f935ec74000-7f935ec75000 rw-p 00002000 08:03 9569282                    /opt/pbis/lib/liblsaauth.so.0.0.0
+7f935ec75000-7f935ec91000 r-xp 00000000 08:03 9569353                    /opt/pbis/lib/liblsaclient.so.0.0.0
+7f935ec91000-7f935ed91000 ---p 0001c000 08:03 9569353                    /opt/pbis/lib/liblsaclient.so.0.0.0
+7f935ed91000-7f935ed92000 rw-p 0001c000 08:03 9569353                    /opt/pbis/lib/liblsaclient.so.0.0.0
+7f935ed92000-7f935ed97000 r-xp 00000000 08:03 26869963                   /lib/libnss_lsass.so.2
+7f935ed97000-7f935ee97000 ---p 00005000 08:03 26869963                   /lib/libnss_lsass.so.2
+7f935ee97000-7f935ee98000 rw-p 00005000 08:03 26869963                   /lib/libnss_lsass.so.2
+7f935ee98000-7f935eea3000 r-xp 00000000 08:03 26871518                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f935eea3000-7f935f0a2000 ---p 0000b000 08:03 26871518                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f935f0a2000-7f935f0a3000 r--p 0000a000 08:03 26871518                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f935f0a3000-7f935f0a4000 rw-p 0000b000 08:03 26871518                   /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f935f0a4000-7f935f0aa000 rw-p 00000000 00:00 0 
+7f935f0aa000-7f935f0b5000 r-xp 00000000 08:03 26871524                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f935f0b5000-7f935f2b4000 ---p 0000b000 08:03 26871524                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f935f2b4000-7f935f2b5000 r--p 0000a000 08:03 26871524                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f935f2b5000-7f935f2b6000 rw-p 0000b000 08:03 26871524                   /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f935f2b6000-7f935f2cc000 r-xp 00000000 08:03 26871475                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f935f2cc000-7f935f4cb000 ---p 00016000 08:03 26871475                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f935f4cb000-7f935f4cc000 r--p 00015000 08:03 26871475                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f935f4cc000-7f935f4cd000 rw-p 00016000 08:03 26871475                   /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f935f4cd000-7f935f4cf000 rw-p 00000000 00:00 0 
+7f935f4cf000-7f935f4d7000 r-xp 00000000 08:03 26871494                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f935f4d7000-7f935f6d6000 ---p 00008000 08:03 26871494                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f935f6d6000-7f935f6d7000 r--p 00007000 08:03 26871494                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f935f6d7000-7f935f6d8000 rw-p 00008000 08:03 26871494                   /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f935f6d8000-7f935f705000 r-xp 00000000 08:04 5777454                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libjava.so
+7f935f705000-7f935f904000 ---p 0002d000 08:04 5777454                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libjava.so
+7f935f904000-7f935f905000 r--p 0002c000 08:04 5777454                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libjava.so
+7f935f905000-7f935f907000 rw-p 0002d000 08:04 5777454                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libjava.so
+7f935f907000-7f935f917000 r-xp 00000000 08:04 5777442                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libverify.so
+7f935f917000-7f935fb16000 ---p 00010000 08:04 5777442                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libverify.so
+7f935fb16000-7f935fb18000 r--p 0000f000 08:04 5777442                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libverify.so
+7f935fb18000-7f935fb19000 rw-p 00011000 08:04 5777442                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/libverify.so
+7f935fb19000-7f935fb20000 r-xp 00000000 08:03 26871525                   /lib/x86_64-linux-gnu/librt-2.23.so
+7f935fb20000-7f935fd1f000 ---p 00007000 08:03 26871525                   /lib/x86_64-linux-gnu/librt-2.23.so
+7f935fd1f000-7f935fd20000 r--p 00006000 08:03 26871525                   /lib/x86_64-linux-gnu/librt-2.23.so
+7f935fd20000-7f935fd21000 rw-p 00007000 08:03 26871525                   /lib/x86_64-linux-gnu/librt-2.23.so
+7f935fd21000-7f935fe29000 r-xp 00000000 08:03 26869791                   /lib/x86_64-linux-gnu/libm-2.23.so
+7f935fe29000-7f9360028000 ---p 00108000 08:03 26869791                   /lib/x86_64-linux-gnu/libm-2.23.so
+7f9360028000-7f9360029000 r--p 00107000 08:03 26869791                   /lib/x86_64-linux-gnu/libm-2.23.so
+7f9360029000-7f936002a000 rw-p 00108000 08:03 26869791                   /lib/x86_64-linux-gnu/libm-2.23.so
+7f936002a000-7f9360c26000 r-xp 00000000 08:04 5777463                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/server/libjvm.so
+7f9360c26000-7f9360e26000 ---p 00bfc000 08:04 5777463                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/server/libjvm.so
+7f9360e26000-7f9360ec6000 r--p 00bfc000 08:04 5777463                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/server/libjvm.so
+7f9360ec6000-7f9360eef000 rw-p 00c9c000 08:04 5777463                    /data/EMBITEL/emb-ankitom/android-studio/jre/jre/lib/amd64/server/libjvm.so
+7f9360eef000-7f9360f33000 rw-p 00000000 00:00 0 
+7f9360f33000-7f9360f4b000 r-xp 00000000 08:03 26871477                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f9360f4b000-7f936114a000 ---p 00018000 08:03 26871477                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f936114a000-7f936114b000 r--p 00017000 08:03 26871477                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f936114b000-7f936114c000 rw-p 00018000 08:03 26871477                   /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f936114c000-7f9361150000 rw-p 00000000 00:00 0 
+7f9361150000-7f9361153000 r-xp 00000000 08:03 26871480                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7f9361153000-7f9361352000 ---p 00003000 08:03 26871480                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7f9361352000-7f9361353000 r--p 00002000 08:03 26871480                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7f9361353000-7f9361354000 rw-p 00003000 08:03 26871480                   /lib/x86_64-linux-gnu/libdl-2.23.so
+7f9361354000-7f9361514000 r-xp 00000000 08:03 26871478                   /lib/x86_64-linux-gnu/libc-2.23.so
+7f9361514000-7f9361714000 ---p 001c0000 08:03 26871478                   /lib/x86_64-linux-gnu/libc-2.23.so
+7f9361714000-7f9361718000 r--p 001c0000 08:03 26871478                   /lib/x86_64-linux-gnu/libc-2.23.so
+7f9361718000-7f936171a000 rw-p 001c4000 08:03 26871478                   /lib/x86_64-linux-gnu/libc-2.23.so
+7f936171a000-7f936171e000 rw-p 00000000 00:00 0 
+7f936171e000-7f9361734000 r-xp 00000000 08:04 5777357                    /data/EMBITEL/emb-ankitom/android-studio/jre/lib/amd64/jli/libjli.so
+7f9361734000-7f9361933000 ---p 00016000 08:04 5777357                    /data/EMBITEL/emb-ankitom/android-studio/jre/lib/amd64/jli/libjli.so
+7f9361933000-7f9361934000 r--p 00015000 08:04 5777357                    /data/EMBITEL/emb-ankitom/android-studio/jre/lib/amd64/jli/libjli.so
+7f9361934000-7f9361935000 rw-p 00016000 08:04 5777357                    /data/EMBITEL/emb-ankitom/android-studio/jre/lib/amd64/jli/libjli.so
+7f9361935000-7f936195b000 r-xp 00000000 08:03 26871476                   /lib/x86_64-linux-gnu/ld-2.23.so
+7f936195b000-7f9361963000 r--s 000bd000 08:04 4334492                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/asm-debug-all-6.0_ALPHA.jar
+7f9361963000-7f936196f000 r--s 00032000 08:04 4334476                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-api-4.4.jar
+7f936196f000-7f9361a31000 rw-p 00000000 00:00 0 
+7f9361a31000-7f9361a34000 ---p 00000000 00:00 0 
+7f9361a34000-7f9361b36000 rw-p 00000000 00:00 0 
+7f9361b36000-7f9361b37000 r--s 00007000 08:04 4334497                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/slf4j-api-1.7.10.jar
+7f9361b37000-7f9361b38000 r--s 00004000 08:04 4334511                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/ant-launcher-1.9.9.jar
+7f9361b38000-7f9361b43000 r--s 0005b000 08:04 4334487                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-base-services-4.4.jar
+7f9361b43000-7f9361b4f000 r--s 0005f000 08:04 4334469                    /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-launcher-4.4.jar
+7f9361b4f000-7f9361b57000 rw-s 00000000 08:03 16909390                   /tmp/hsperfdata_emb-ankitom/11914
+7f9361b57000-7f9361b58000 rw-p 00000000 00:00 0 
+7f9361b58000-7f9361b59000 r--p 00000000 00:00 0 
+7f9361b59000-7f9361b5a000 rw-p 00000000 00:00 0 
+7f9361b5a000-7f9361b5b000 r--p 00025000 08:03 26871476                   /lib/x86_64-linux-gnu/ld-2.23.so
+7f9361b5b000-7f9361b5c000 rw-p 00026000 08:03 26871476                   /lib/x86_64-linux-gnu/ld-2.23.so
+7f9361b5c000-7f9361b5d000 rw-p 00000000 00:00 0 
+7ffd2444a000-7ffd2446b000 rw-p 00000000 00:00 0                          [stack]
+7ffd245f4000-7ffd245f6000 r--p 00000000 00:00 0                          [vvar]
+7ffd245f6000-7ffd245f8000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xmx1536m -Dfile.encoding=UTF-8 -Duser.country=IN -Duser.language=en -Duser.variant 
+java_command: org.gradle.launcher.daemon.bootstrap.GradleDaemon 4.4
+java_class_path (initial): /data/EMBITEL/emb-ankitom/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-launcher-4.4.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/data/EMBITEL/emb-ankitom/bin:/data/EMBITEL/emb-ankitom/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
+USERNAME=emb-ankitom
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x9edb30], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x9edb30], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x84e800], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x84e800], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x84e800], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x84e800], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x84e6d0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x84e8c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x84e8c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x84e8c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x84e8c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=LinuxMint
+DISTRIB_RELEASE=18.3
+DISTRIB_CODENAME=sylvia
+DISTRIB_DESCRIPTION="Linux Mint 18.3 Sylvia"
+
+uname:Linux 4.10.0-38-generic #42~16.04.1-Ubuntu SMP Tue Oct 10 16:32:20 UTC 2017 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 63536, NOFILE 1048576, AS infinity
+load average:1.16 1.22 1.07
+
+/proc/meminfo:
+MemTotal:       16312516 kB
+MemFree:         7444556 kB
+MemAvailable:   10484684 kB
+Buffers:          439304 kB
+Cached:          2803184 kB
+SwapCached:            0 kB
+Active:          6474404 kB
+Inactive:        1824256 kB
+Active(anon):    4770936 kB
+Inactive(anon):   491528 kB
+Active(file):    1703468 kB
+Inactive(file):  1332728 kB
+Unevictable:         416 kB
+Mlocked:             416 kB
+SwapTotal:      31250428 kB
+SwapFree:       31250428 kB
+Dirty:              3120 kB
+Writeback:             0 kB
+AnonPages:       4961748 kB
+Mapped:           835388 kB
+Shmem:            206304 kB
+Slab:             393412 kB
+SReclaimable:     340000 kB
+SUnreclaim:        53412 kB
+KernelStack:       20112 kB
+PageTables:        68708 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    39406684 kB
+Committed_AS:   14113556 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1937408 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      213476 kB
+DirectMap2M:    10153984 kB
+DirectMap1G:     7340032 kB
+
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 158 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+stepping	: 9
+microcode	: 0x48
+cpu MHz		: 3670.812
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 6816.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+stepping	: 9
+microcode	: 0x48
+cpu MHz		: 3659.814
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 6816.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+stepping	: 9
+microcode	: 0x48
+cpu MHz		: 3670.397
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 6816.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+stepping	: 9
+microcode	: 0x48
+cpu MHz		: 3655.041
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 6816.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 16312516k(7444556k free), swap 31250428k(31250428k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.152-b01) for linux-amd64 JRE (1.8.0_152-release-1024-b01), built by "builder" with gcc 4.8.4
+
+time: Fri Jun 29 12:07:38 2018
+elapsed time: 3 seconds (0d 0h 0m 3s)
+
