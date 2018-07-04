@@ -52,8 +52,8 @@ public class Home_Screen extends BaseActivity
 
     /* Tab identifiers */
     private static String TAB_A = "Home";
-    private static String TAB_B = "My Cart";
-    private static String TAB_C = "Search";
+    private static String TAB_B = "Special Offers";
+    private static String TAB_C = "My Cart";
     private static String TAB_D = "My Account";
     private final int[] prevExpandPosition = {-1};
     private RecyclerView recyclerView;

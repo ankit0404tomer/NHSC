@@ -84,6 +84,9 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
                     if (mData.get(mkeys.get(getAdapterPosition())).size() > 0) {
                         imgPlus.setVisibility(View.VISIBLE);
 
+
+
+
                         if (mSparseArray[getAdapterPosition()] == false) {
                             imgPlus.setImageDrawable(mContext.getResources().getDrawable(R.drawable.minus));
 

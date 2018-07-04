@@ -14,7 +14,7 @@ public class HomeInteractorImpl implements HomeInteractor {
     @Override
     public void getNavigationDrawerData(SPRestClient mSpRestClientInstance, final GenericResponseListener listener) {
 
-        mSpRestClientInstance.getDontCache("" + "http://cipguru.com/nhsc/services/SubCategories/getSubCategories", null, "drawer", new SPResponseListener<JSONObject>() {
+        mSpRestClientInstance.get("" + "http://cipguru.com/nhsc/services/SubCategories/getSubCategories", null, "drawer", new SPResponseListener<JSONObject>() {
             @Override
             public void onSuccess(JSONObject response) {
                 listener.onSuccess(response);
@@ -31,7 +31,7 @@ public class HomeInteractorImpl implements HomeInteractor {
     @Override
     public void getHomeData(SPRestClient mSpRestClientInstance, final GenericResponseListener listener) {
 
-        mSpRestClientInstance.getDontCache("" + "http://cipguru.com/nhsc/services/Categories/getCategories", null, "Home", new SPResponseListener<JSONObject>() {
+        mSpRestClientInstance.get("" + "http://cipguru.com/nhsc/services/Categories/getCategories", null, "Home", new SPResponseListener<JSONObject>() {
             @Override
             public void onSuccess(JSONObject response) {
                 listener.onSuccess(response);
