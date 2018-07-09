@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.nhsc.Adapters.ViewPagerAdapter;
-import com.nhsc.Fragments.Category_Tabs_Fragment;
+import com.nhsc.home.fragment.Category_Tabs_Fragment;
 import com.nhsc.R;
 
 /**

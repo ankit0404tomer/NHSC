@@ -90,4 +90,26 @@ public class HomePresenterImpl implements HomePresenter {
         homeView = null;
     }
 
+    @Override
+    public void onSignOutClicked() {
+        if (homeView != null) {
+
+            homeView.showProgress();
+            homeInteractor.getSignOut(mSpRestClientInstance, new GenericResponseListener() {
+                @Override
+                public void onError(SPError spError) {
+                    homeView.hideProgress();
+                    homeView.onHomeFailure(spError.getMessage());
+                }
+
+                @Override
+                public void onSuccess(JSONObject response) {
+                    homeView.hideProgress();
+             homeView.OnSignOutSucess();
+                }
+            });
+
+        }
+    }
+
 }

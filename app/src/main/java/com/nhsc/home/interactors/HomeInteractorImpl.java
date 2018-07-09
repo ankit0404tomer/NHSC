@@ -44,5 +44,21 @@ public class HomeInteractorImpl implements HomeInteractor {
         });
     }
 
+    @Override
+    public void getSignOut(SPRestClient mSpRestClientInstance, final GenericResponseListener listener) {
+
+        mSpRestClientInstance.get("" + "http://cipguru.com/nhsc/services/Login/logout", null, "Home", new SPResponseListener<JSONObject>() {
+            @Override
+            public void onSuccess(JSONObject response) {
+                listener.onSuccess(response);
+            }
+
+            @Override
+            public void onError(SPError error) {
+                listener.onError(error);
+            }
+        });
+    }
+
 
 }

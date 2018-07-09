@@ -17,4 +17,5 @@ public interface HomeView extends BaseView {
 
     void onHomeFailure(String message);
 
+    void OnSignOutSucess();
 }

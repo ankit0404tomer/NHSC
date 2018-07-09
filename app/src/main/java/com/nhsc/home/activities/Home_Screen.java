@@ -1,10 +1,9 @@
 package com.nhsc.home.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -27,13 +26,13 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nhsc.Fragments.MyCart_Fragment;
-import com.nhsc.Fragments.My_Account_Fragment;
-import com.nhsc.Fragments.Search_Fragment;
-import com.nhsc.Models.ExpandedMenuModel;
+import com.nhsc.Activities.GetStarted;
+import com.nhsc.home.fragment.My_Account_Fragment;
+import com.nhsc.home.fragment.Search_Fragment;
 import com.nhsc.R;
 import com.nhsc.Utils.Utils;
 import com.nhsc.base.BaseActivity;
+import com.nhsc.base.CustomSharedPreff;
 import com.nhsc.home.adapter.DrawerAdapter;
 import com.nhsc.home.fragment.Home_Fragment;
 import com.nhsc.home.model.DrawerModel;
@@ -41,6 +40,7 @@ import com.nhsc.home.model.HomeModel;
 import com.nhsc.home.presenters.HomePresenter;
 import com.nhsc.home.presenters.HomePresenterImpl;
 import com.nhsc.home.views.HomeView;
+import com.nhsc.special_offers.fragment.SpecialOffersFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Home_Screen extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeView {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeView, DrawerAdapter.onClicked {
 
     /* Tab identifiers */
     private static String TAB_A = "Home";
@@ -56,15 +56,15 @@ public class Home_Screen extends BaseActivity
     private static String TAB_C = "My Cart";
     private static String TAB_D = "My Account";
     private final int[] prevExpandPosition = {-1};
+    public ProgressBar progressBar;
+    CustomSharedPreff sharedPreff;
     private RecyclerView recyclerView;
     private Utils utils;
     private Home_Fragment home_fragment;
-    private MyCart_Fragment myCart_fragment;
-    private Search_Fragment search_fragment;   public ProgressBar progressBar;
-
+    private SpecialOffersFragment special_offersFragment;
+    private Search_Fragment search_fragment;
     private My_Account_Fragment my_account_fragment;
     private TabHost host;
-    private DrawerAdapter mAdapter;
     /*
      * TabChangeListener for changing the tab when one of the tabs is pressed
      */
@@ -77,7 +77,7 @@ public class Home_Screen extends BaseActivity
             if (tabId.equals(TAB_A)) {
                 pushFragments(tabId, home_fragment);
             } else if (tabId.equals(TAB_B)) {
-                pushFragments(tabId, myCart_fragment);
+                pushFragments(tabId, special_offersFragment);
             } else if (tabId.equals(TAB_C)) {
                 pushFragments(tabId, search_fragment);
             } else if (tabId.equals(TAB_D)) {
@@ -85,6 +85,7 @@ public class Home_Screen extends BaseActivity
             }
         }
     };
+    private DrawerAdapter mAdapter;
     private HomeModel homeModel;
     private HomePresenter mPresenter;
     private LinkedHashMap<String, ArrayList<String>> mDrawerData;
@@ -117,6 +118,7 @@ public class Home_Screen extends BaseActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         progressBar = (ProgressBar) findViewById(R.id.progress_view);
+        sharedPreff = new CustomSharedPreff(Home_Screen.this);
 
         setSupportActionBar(toolbar);
         mDrawerData = new LinkedHashMap<>();
@@ -137,7 +139,6 @@ public class Home_Screen extends BaseActivity
         utils.setUbuntu_Regular(title);
 
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -151,7 +152,7 @@ public class Home_Screen extends BaseActivity
         recyclerView = (RecyclerView) findViewById(R.id.navigationmenu);
 
         home_fragment = new Home_Fragment();
-        myCart_fragment = new MyCart_Fragment();
+        special_offersFragment = new SpecialOffersFragment();
         search_fragment = new Search_Fragment();
         my_account_fragment = new My_Account_Fragment();
 
@@ -322,8 +323,12 @@ public class Home_Screen extends BaseActivity
             mDrawerData.put(homeModel.getComponents().get(i).getCategoriesName(), list);
 
         }
-        mDrawerData.put("Settings", new ArrayList<String>());
-        mDrawerData.put("Sign out",  new ArrayList<String>());
+        ArrayList<String> newlist=new ArrayList<>();
+        newlist.add("Settings");
+        mDrawerData.put("Settings", newlist);
+        newlist=new ArrayList<>();
+        newlist.add("Sign out");
+        mDrawerData.put("Sign out", newlist);
 
 
         setUpRecyclerView(mDrawerData);
@@ -333,7 +338,7 @@ public class Home_Screen extends BaseActivity
     private void setUpRecyclerView(HashMap<String, ArrayList<String>> mDrawerData) {
 
 
-        mAdapter = new DrawerAdapter(Home_Screen.this,mDrawerData);
+        mAdapter = new DrawerAdapter(Home_Screen.this, mDrawerData);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -342,8 +347,8 @@ public class Home_Screen extends BaseActivity
 
     @Override
     public void onNavigationDrawerFailure(String message) {
-        Toast.makeText(getApplicationContext(),message
-        ,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), message
+                , Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -355,7 +360,15 @@ public class Home_Screen extends BaseActivity
 
     @Override
     public void onHomeFailure(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 
+    @Override
+    public void OnSignOutSucess() {
+        Toast.makeText(this, "Sign Out Sucessfully", Toast.LENGTH_SHORT).show();
+        sharedPreff.setLoginSucess(false);
+        Intent getstarted_intent = new Intent(this, GetStarted.class);
+        startActivity(getstarted_intent);
     }
 
     @Override
@@ -368,5 +381,10 @@ public class Home_Screen extends BaseActivity
     public void hideProgress() {
         progressBar.setVisibility(View.GONE);
 
+    }
+
+    @Override
+    public void onSignOutClicked() {
+        mPresenter.onSignOutClicked();
     }
 }

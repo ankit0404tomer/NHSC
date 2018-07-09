@@ -1,4 +1,4 @@
-package com.nhsc.Fragments;
+package com.nhsc.home.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

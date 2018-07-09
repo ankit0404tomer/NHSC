@@ -19,6 +19,7 @@ import java.util.Set;
 
 public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder> {
 
+    public onClicked mCallback;
     Set<String> keySet;
     ArrayList<String> mkeys;
     ChildDrawerAdapter mAdapter;
@@ -30,6 +31,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         mData = mDrawerData;
         mContext = context;
         mkeys = new ArrayList<>();
+        mCallback = (onClicked) context;
     }
 
     @Override
@@ -68,6 +70,10 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         return mData.size();
     }
 
+    public interface onClicked {
+        void onSignOutClicked();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView mTitle;
         RecyclerView childRecyclerview;
@@ -81,11 +87,13 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if (mData.get(mkeys.get(getAdapterPosition())).get(0).equals("Sign out")) {
+                        mCallback.onSignOutClicked();
+                        return;
+                    }
+
                     if (mData.get(mkeys.get(getAdapterPosition())).size() > 0) {
                         imgPlus.setVisibility(View.VISIBLE);
-
-
-
 
                         if (mSparseArray[getAdapterPosition()] == false) {
                             imgPlus.setImageDrawable(mContext.getResources().getDrawable(R.drawable.minus));
@@ -105,7 +113,9 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
 
                         }
                     } else
-                        return;
+
+
+                    return;
 
 
                 }

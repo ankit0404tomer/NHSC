@@ -7,4 +7,5 @@ public interface HomePresenter {
 
     void onDestroy();
 
+    void onSignOutClicked();
 }

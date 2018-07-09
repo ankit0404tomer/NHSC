@@ -8,4 +8,5 @@ public interface HomeInteractor {
     void getNavigationDrawerData(SPRestClient mSpRestClientInstance, GenericResponseListener listener);
     void getHomeData(SPRestClient mSpRestClientInstance, GenericResponseListener listener);
 
+    void getSignOut(SPRestClient mSpRestClientInstance, GenericResponseListener genericResponseListener);
 }
