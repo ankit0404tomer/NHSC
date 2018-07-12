@@ -6,5 +6,5 @@ import com.nhsc.networking.SPRestClient;
 public interface SpecialofferInteractor {
 
 
-    void getSpecialOffers(SPRestClient mSpRestClientInstance, GenericResponseListener genericResponseListener);
+    void getSpecialOffers(int mPageNumber, SPRestClient mSpRestClientInstance, GenericResponseListener genericResponseListener);
 }

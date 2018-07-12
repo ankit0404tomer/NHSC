@@ -1,12 +1,12 @@
 package com.nhsc.special_offers.presenters;
 
-import android.content.Context;
-
+import com.google.gson.Gson;
 import com.nhsc.base.GenericResponseListener;
 import com.nhsc.networking.SPError;
 import com.nhsc.networking.SPRestClient;
 import com.nhsc.special_offers.interactors.SpecialOfferInteractorImpl;
 import com.nhsc.special_offers.interactors.SpecialofferInteractor;
+import com.nhsc.special_offers.model.SpecialOffersModel;
 import com.nhsc.special_offers.views.SpecialOfferView;
 
 import org.json.JSONObject;
@@ -17,11 +17,9 @@ public class SpecialOfferPresenterImpl implements SpecialOfferPresenter {
     private SpecialOfferView specialOfferView;
     private SpecialofferInteractor interactor;
     private SPRestClient mSpRestClientInstance;
-    private Context mContext;
 
-    public SpecialOfferPresenterImpl(Context context, SpecialOfferView specialOfferView, SPRestClient mSpRestClientInstance) {
+    public SpecialOfferPresenterImpl(SpecialOfferView specialOfferView, SPRestClient mSpRestClientInstance) {
         this.specialOfferView = specialOfferView;
-        this.mContext = context;
         this.mSpRestClientInstance = mSpRestClientInstance;
         this.interactor = new SpecialOfferInteractorImpl();
     }
@@ -32,11 +30,11 @@ public class SpecialOfferPresenterImpl implements SpecialOfferPresenter {
     }
 
     @Override
-    public void getSpecialOffers() {
+    public void getSpecialOffers(int mPageNumber) {
         if (specialOfferView != null) {
 
             specialOfferView.showProgress();
-            interactor.getSpecialOffers(mSpRestClientInstance, new GenericResponseListener() {
+            interactor.getSpecialOffers(mPageNumber,mSpRestClientInstance, new GenericResponseListener() {
                 @Override
                 public void onError(SPError spError) {
                     specialOfferView.hideProgress();
@@ -46,7 +44,12 @@ public class SpecialOfferPresenterImpl implements SpecialOfferPresenter {
                 @Override
                 public void onSuccess(JSONObject response) {
                     specialOfferView.hideProgress();
-                    specialOfferView.onSpecialOfferSuccess();
+                    if(response!=null){
+                        Gson gson=new Gson();
+                        SpecialOffersModel specialOffersModel = gson.fromJson(response.toString(), SpecialOffersModel.class);
+                        specialOfferView.onSpecialOfferSuccess(specialOffersModel);
+                    }
+
                 }
             });
         }

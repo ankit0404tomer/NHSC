@@ -4,5 +4,5 @@ public interface SpecialOfferPresenter {
 
     void onDestroy();
 
-    void getSpecialOffers();
+    void getSpecialOffers(int mPageNumber);
 }
